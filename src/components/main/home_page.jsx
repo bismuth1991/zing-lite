@@ -1,5 +1,5 @@
 import React from 'react';
-import SongIndexContainer from '../songs_index/song_index_container';
+import SongIndexContainer from '../song_index/song_index_container';
 
 const HomePage = () => (
   <>
