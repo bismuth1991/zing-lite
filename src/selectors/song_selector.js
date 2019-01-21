@@ -7,7 +7,8 @@ export const getSongInfo = (song, artists, albums) => {
     title: song.title,
     url: song.url,
     artist: artist.name,
-    avatarUrl: artist.avatarUrl,
+    artistAvatar: artist.avatarUrl,
+    album: album.name,
     coverImage: album.coverImage,
   };
 };

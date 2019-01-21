@@ -60,7 +60,8 @@ SongIndex.propTypes = {
     title: string,
     url: string,
     artist: string,
-    avatarUrl: string,
+    artistAvatar: string,
+    album: string,
     coverImage: string,
   })).isRequired,
 };
