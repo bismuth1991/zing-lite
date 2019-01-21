@@ -1,15 +1,15 @@
 import { RECEIVE_SONGS } from '../actions/song_actions';
 
-const songsReducer = (state = {}, action) => {
+const albumsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_SONGS:
       return {
         ...state,
-        ...action.payload.songs,
+        ...action.payload.albums,
       };
     default:
       return state;
   }
 };
 
-export default songsReducer;
+export default albumsReducer;
