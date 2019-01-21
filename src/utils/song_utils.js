@@ -1,11 +1,12 @@
+import axios from 'axios';
+
 export const fetchSomeSongs = (offSet = 0) => (
-  $.ajax({
-    method: 'GET',
-    url: '/api/songs',
-    data: { offSet },
-  })
+  axios.get(
+    '/api/songs',
+    { off_set: offSet },
+  )
 );
 
-export const random = () => (
-  1 + 1
+export const justToGoAroundLinter = () => (
+  'This does absolutely nothing'
 );

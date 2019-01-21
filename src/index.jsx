@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     root,
   );
 
+  axios.defaults.baseURL = 'https://zing-lite-rails-api.herokuapp.com';
   axios.defaults.xsrfCookieName = 'CSRF-TOKEN';
   axios.defaults.xsrfHeaderName = 'X-CSRF-Token';
   axios.defaults.withCredentials = true;
