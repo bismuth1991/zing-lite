@@ -5,7 +5,7 @@ import RootPage from './root_page';
 
 const App = () => (
   <>
-    <main className="site-content site-content-full">
+    <main className="Site-content Site-content--full">
       <Route path="/home" component={HomePage} />
       <Route path="/" component={RootPage} />
     </main>
