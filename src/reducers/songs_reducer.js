@@ -5,7 +5,7 @@ const songsReducer = (state = {}, action) => {
     case RECEIVE_SONGS:
       return {
         ...state,
-        ...action.payload.songs,
+        ...action.payload.data.songs,
       };
     default:
       return state;

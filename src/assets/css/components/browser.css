@@ -7,7 +7,7 @@
   height: 64px;
   width: 64px;
   margin: 0 0.5em 0.5em;
-  background: url('images/browser-logos.jpg') no-repeat 0 0;
+  /* background: url('images/browser-logos.jpg') no-repeat 0 0; */
   background-size: auto 100%;
 }
 

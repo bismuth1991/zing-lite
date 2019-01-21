@@ -5,7 +5,7 @@ const artistsReducer = (state = {}, action) => {
     case RECEIVE_SONGS:
       return {
         ...state,
-        ...action.payload.artists,
+        ...action.payload.data.artists,
       };
     default:
       return state;

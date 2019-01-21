@@ -1,33 +1,33 @@
-@import 'normalize.css';
-@import 'suitcss-utils-display';
-@import 'suitcss-utils-text';
+/* @import 'normalize.css'; */
+/* @import 'suitcss-utils-display'; */
+/* @import 'suitcss-utils-text'; */
 
-@import './base/variables';
-@import './base/custom-media';
-@import './base/elements';
+@import './base/variables.css';
+@import './base/custom-media.css';
+@import './base/elements.css';
 
-@import './components/aligner';
-@import './components/browser';
-@import './components/button';
-@import './components/container';
-@import './components/demo';
-@import './components/error';
-@import './components/feature';
-@import './components/footer';
-@import './components/grid';
-@import './components/header';
-@import './components/holy-grail';
-@import './components/image';
-@import './components/input-add-on';
-@import './components/media';
-@import './components/notice';
-@import './components/section';
-@import './components/site';
+@import './components/aligner.css';
+@import './components/browser.css';
+@import './components/button.css';
+@import './components/container.css';
+@import './components/demo.css';
+@import './components/error.css';
+@import './components/feature.css';
+@import './components/footer.css';
+@import './components/grid.css';
+@import './components/header.css';
+@import './components/holy-grail.css';
+@import './components/image.css';
+@import './components/input-add-on.css';
+@import './components/media.css';
+@import './components/notice.css';
+@import './components/section.css';
+@import './components/site.css';
 
-@import './utils/compat';
-@import './utils/media';
-@import './utils/size';
+@import './utils/compat.css';
+@import './utils/media.css';
+@import './utils/size.css';
 
-@import './vendor/font-awesome-extensions';
-@import './vendor/highlight';
-@import './vendor/twitter';
+@import './vendor/font-awesome-extensions.css';
+/* @import './vendor/highlight.css'; */
+@import './vendor/twitter.css';

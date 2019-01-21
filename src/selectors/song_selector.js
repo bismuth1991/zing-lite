@@ -9,7 +9,7 @@ export const getSongInfo = (song, artists, albums) => {
     artist: artist.name,
     artistAvatar: artist.avatarUrl,
     album: album.name,
-    coverImage: album.coverImage,
+    coverImage: album.coverImageUrl,
   };
 };
 
