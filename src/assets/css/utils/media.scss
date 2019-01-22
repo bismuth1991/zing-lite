@@ -1,4 +1,4 @@
-@import '../base/custom-media.css';
+@import '../base/custom-media.scss';
 
 .u-full {
   width: 100% !important;
@@ -30,7 +30,7 @@
   flex: none !important;
 }
 
-@media (--break-sm) {
+@media ($--break-sm) {
   .u-small-full {
     width: 100% !important;
     flex: none !important;
@@ -57,7 +57,7 @@
   }
 }
 
-@media (--break-md) {
+@media ($--break-md) {
   .u-med-full {
     width: 100% !important;
     flex: none !important;
@@ -84,7 +84,7 @@
   }
 }
 
-@media (--break-lg) {
+@media ($--break-lg) {
   .u-large-full {
     width: 100% !important;
     flex: none !important;

@@ -8,12 +8,13 @@ class SongIndexItem extends React.Component {
     const { title, artist, coverImage } = this.props;
 
     return (
-      <div className="song-item-container">
-        <figure className="song-img-container">
-          <img className="song-img" src={coverImage} alt={title} />
+      <div className="Feature">
+        <figure>
+          <img className="Feature-image" src={coverImage} alt={title} />
         </figure>
 
         {title}
+        <br />
         {artist}
       </div>
     );

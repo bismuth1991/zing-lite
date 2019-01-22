@@ -10,7 +10,7 @@ html {
   font: 400 1em/1.4 'Open Sans', sans-serif;
   text-rendering: optimizeLegibility;
 }
-@media (--high-dppx) {
+@media ($--high-dppx) {
   html {
     font-weight: 300;
   }
@@ -20,11 +20,12 @@ h1 {
   font-weight: 300;
   font-size: 2em;
   -webkit-font-kerning: normal;
+  font-kerning: normal;
   letter-spacing: -.015em;
   line-height: 1;
   margin: .25em 0 .75em;
 }
-@media (--break-lg) {
+@media ($--break-lg) {
   h1 {
     font-size: 2.5em;
     margin: .5em 0 1em;

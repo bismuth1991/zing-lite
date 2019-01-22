@@ -41,7 +41,7 @@
   vertical-align: top;
 }
 
-@media (--break-md) {
+@media ($--break-md) {
   .Footer-credit {
     display: inline-block;
     margin: 0 0.25em;

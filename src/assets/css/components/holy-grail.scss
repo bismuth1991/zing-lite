@@ -39,7 +39,7 @@
   background: rgba(147, 128, 108, 0.1);
 }
 
-@media (--break-lg) {
+@media ($--break-lg) {
   .HolyGrail-body {
     flex-direction: row;
   }

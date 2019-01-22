@@ -5,7 +5,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import 'normalize.css';
-import './assets/css/main.css';
+import './assets/css/main.scss';
 
 axios.defaults.baseUrl = 'https://zing-lite-rails-api.herokuapp.com';
 axios.defaults.xsrfCookieName = 'CSRF-TOKEN';

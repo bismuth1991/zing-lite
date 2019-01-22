@@ -9,7 +9,7 @@
   width: 30px;
 }
 
-@media (--break-md) {
+@media ($--break-md) {
   .Image {
     width: 70px;
   }

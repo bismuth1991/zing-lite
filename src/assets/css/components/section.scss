@@ -18,7 +18,7 @@
 .Section::after {
   margin-top: var(--space);
 }
-@media (--break-lg) {
+@media ($--break-lg) {
   .Section {
     padding: 0 var(--space-lg);
   }
@@ -34,7 +34,7 @@
   text-align: center;
 }
 
-@media (--break-lg) {
+@media ($--break-lg) {
   .Section-list {
     padding: 0;
     margin: 0 calc(2 * var(--space-lg)) var(--space-lg);

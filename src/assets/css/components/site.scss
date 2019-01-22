@@ -29,7 +29,7 @@
   height: 0px;
   visibility: hidden;
 }
-@media (--break-lg) {
+@media ($--break-lg) {
   .Site-content {
     padding-top: var(--space-lg);
   }
