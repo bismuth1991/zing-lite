@@ -12,8 +12,7 @@ const getPlayedSongIndices = (playedSongIndices, playingSongIndex, songIds) => {
 };
 
 export const forwardLogic = (state) => {
-  const { session: { audioPlayer } } = state;
-  const { songIds, playingSongIndex, playedSongIndices } = audioPlayer;
+  const { songIds, playingSongIndex, playedSongIndices } = state;
 
   let newPlayingSongIndex = playingSongIndex + 1;
   if (newPlayingSongIndex > songIds.length - 1) {
@@ -25,7 +24,7 @@ export const forwardLogic = (state) => {
   );
 
   return {
-    ...audioPlayer,
+    ...state,
     playingSongIndex: newPlayingSongIndex,
     prevSongIndex: playingSongIndex,
     playedSongIndices: newPlayedSongIndices,
@@ -33,10 +32,7 @@ export const forwardLogic = (state) => {
 };
 
 export const backwardLogic = (state) => {
-  const { session: { audioPlayer } } = state;
-  const {
-    songIds, playingSongIndex, playedSongIndices, prevSongIndex,
-  } = audioPlayer;
+  const { songIds, playingSongIndex, playedSongIndices, prevSongIndex } = state;
 
   let newPrevSongIndex = prevSongIndex - 1;
   if (newPrevSongIndex < 0) {
@@ -48,7 +44,7 @@ export const backwardLogic = (state) => {
   );
 
   return {
-    ...audioPlayer,
+    ...state,
     playingSongIndex: prevSongIndex,
     prevSongIndex: newPrevSongIndex,
     playedSongIndices: newPlayedSongIndices,
@@ -56,8 +52,7 @@ export const backwardLogic = (state) => {
 };
 
 export const shuffleLogic = (state) => {
-  const { session: { audioPlayer } } = state;
-  const { songIds, playedSongIndices, playingSongIndex } = audioPlayer;
+  const { songIds, playedSongIndices, playingSongIndex } = state;
 
   const history = [...playedSongIndices, playingSongIndex];
 
@@ -78,7 +73,7 @@ export const shuffleLogic = (state) => {
   );
 
   return {
-    ...audioPlayer,
+    ...state,
     playingSongIndex: nextSongIndex,
     prevSongIndex: playingSongIndex,
     playedSongIndices: newPlayedSongIndices,
