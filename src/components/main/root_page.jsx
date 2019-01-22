@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { fetchSomeSongs } from '../../actions/song_actions';
+import { func } from 'prop-types';
 
 class RootPage extends React.Component {
   componentDidMount() {
@@ -13,11 +12,8 @@ class RootPage extends React.Component {
   }
 }
 
-const mapDispatchtoProps = dispatch => ({
-  fetchSomeSongs: offSet => dispatch(fetchSomeSongs(offSet)),
-});
+RootPage.propTypes = {
+  fetchSomeSongs: func.isRequired,
+};
 
-export default connect(
-  null,
-  mapDispatchtoProps,
-)(RootPage);
+export default RootPage;
