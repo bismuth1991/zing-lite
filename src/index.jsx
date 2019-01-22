@@ -7,10 +7,6 @@ import Root from './components/root';
 import 'normalize.css';
 import './assets/css/main.scss';
 
-axios.defaults.baseUrl = 'https://zing-lite-rails-api.herokuapp.com';
-axios.defaults.xsrfCookieName = 'CSRF-TOKEN';
-axios.defaults.xsrfHeaderName = 'X-CSRF-Token';
-axios.defaults.withCredentials = true;
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -21,4 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <Root store={store} />,
     root,
   );
+
+  axios.defaults.baseUrl = 'https://zing-lite-rails-api.herokuapp.com';
+  axios.defaults.xsrfCookieName = 'CSRF-TOKEN';
+  axios.defaults.xsrfHeaderName = 'X-CSRF-Token';
+  axios.defaults.withCredentials = true;
 });
