@@ -38,17 +38,13 @@ class SongIndex extends React.Component {
     const { songs } = this.props;
 
     return (
-      <section className="Section">
-        <div className="Container">
-          <ul className="Grid Grid-gutters">
-            {songs.map(song => (
-              <li className="Grid-cell u-full u-med-1of2 u-large-1of3" key={song.id}>
-                <SongIndexItem {...song} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <ul className="Grid Grid--guttersLg Grid--justifyCenter">
+        {songs.map(song => (
+          <li className="Grid-cell Grid-cell--autoSize" key={song.id}>
+            <SongIndexItem {...song} />
+          </li>
+        ))}
+      </ul>
     );
   }
 }

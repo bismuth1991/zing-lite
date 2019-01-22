@@ -26,14 +26,22 @@
 
 .HolyGrail-content {
   margin-top: var(--space);
+  overflow: scroll;
+  height: calc(100vh - 105px);
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .HolyGrail-nav {
   order: -1;
+  position: sticky;
+  top: 0;
 }
 
 .HolyGrail-nav,
-.HolyGrail-ads {
+.HolyGrail-aside {
   padding: 1em;
   border-radius: 3px;
   background: rgba(147, 128, 108, 0.1);
@@ -48,7 +56,12 @@
     padding: 0 var(--space-lg);
     margin: 0;
   }
-  .HolyGrail-nav, .HolyGrail-ads {
+  .HolyGrail-nav, .HolyGrail-aside {
     flex: 0 0 12em;
+  }
+  .HolyGrail-aside {
+    align-self: flex-start;
+    position: sticky;
+    top: 78px;
   }
 }

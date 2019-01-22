@@ -10,12 +10,16 @@ class SongIndexItem extends React.Component {
     return (
       <div className="Feature">
         <figure>
-          <img className="Feature-image" src={coverImage} alt={title} />
+          <img
+            className="Feature-image"
+            style={{ height: '185px' }}
+            src={coverImage}
+            alt={title}
+          />
         </figure>
 
-        {title}
-        <br />
-        {artist}
+        <p className="Feature-description">{title}</p>
+        <p className="Feature-description">{artist}</p>
       </div>
     );
   }
