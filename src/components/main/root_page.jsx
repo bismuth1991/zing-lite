@@ -1,6 +1,8 @@
 import React from 'react';
 import { func } from 'prop-types';
 
+import AudioPlayerContainer from '../audio_player/audio_player_container';
+
 class RootPage extends React.Component {
   componentDidMount() {
     const { fetchSomeSongs } = this.props;
@@ -8,7 +10,11 @@ class RootPage extends React.Component {
   }
 
   render() {
-    return <></>;
+    return (
+    <>
+      <AudioPlayerContainer />
+    </>
+    );
   }
 }
 
