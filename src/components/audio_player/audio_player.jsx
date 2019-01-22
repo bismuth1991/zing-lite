@@ -53,7 +53,7 @@ class AudioPlayer extends React.Component {
       artist,
       artistAvatar,
       album,
-      albumCover,
+      coverImage,
       isEndOfLoop,
       forward,
       backward,
@@ -91,7 +91,7 @@ class AudioPlayer extends React.Component {
 
 
         <div className="audio-player-container">
-          <SpinningDisc album={album} albumCover={albumCover} />
+          <SpinningDisc album={album} coverImage={coverImage} />
 
           <div className="component-wrapper">
             <Marquee title={title} artist={artist} artistAvatar={artistAvatar} />
@@ -149,7 +149,7 @@ AudioPlayer.propTypes = {
   artist: string.isRequired,
   artistAvatar: string.isRequired,
   album: string.isRequired,
-  albumCover: string.isRequired,
+  coverImage: string.isRequired,
   isEndOfLoop: bool.isRequired,
   forward: func.isRequired,
   backward: func.isRequired,

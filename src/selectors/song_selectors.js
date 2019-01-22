@@ -1,4 +1,6 @@
 export const getSongInfo = (song, artists, albums) => {
+  if (!song) return {};
+
   const artist = artists[song.artistId];
   const album = albums[song.albumId];
 

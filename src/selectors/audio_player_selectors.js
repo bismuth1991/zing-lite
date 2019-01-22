@@ -1,4 +1,4 @@
-import { getSongInfo } from './song_selector';
+import { getSongInfo } from './song_selectors';
 
 export const getCurrentSongInfo = ({ entities, session }) => {
   const { songs, artists, albums } = entities;
