@@ -20,6 +20,15 @@
 @import './components/section.scss';
 @import './components/site.scss';
 
+@import './vendors/audio_player/audio_player_main.scss';
+@import './vendors/audio_player/audio_player_animations.scss';
+@import './vendors/audio_player/audio_player_buttons.scss';
+@import './vendors/audio_player/audio_player_slider.scss';
+@import './vendors/audio_player/audio_player_seek_slider.scss';
+@import './vendors/audio_player/audio_player_volume_slider.scss';
+@import './vendors/audio_player/audio_player_spinning_disc.scss';
+@import './vendors/audio_player/audio_player_marquee.scss';
+
 @import './utils/compat.scss';
 @import './utils/media.scss';
 @import './utils/size.scss';
