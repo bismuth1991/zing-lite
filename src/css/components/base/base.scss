@@ -5,7 +5,8 @@
 }
 
 html {
-  height: 100%;
+  // height: 100%;
+  // width: 100%;
   color: white;
   background-color: #1d1924;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -13,10 +14,11 @@ html {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // height: 100vh;
+  // width: 100vw;
 }
 
 p {

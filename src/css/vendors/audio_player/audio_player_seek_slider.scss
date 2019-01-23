@@ -1,14 +1,13 @@
 .seek-slider-wrapper {
+  flex: 0 0 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-}
-
-.seek-slider-wrapper p {
-  margin: 0 0 0 10px;
+  padding: 5px;
 }
 
 .seek-slider {
+  max-width: 100px;
+  flex: 1;
   margin-right: 10px;
-  width: 96px;
 }

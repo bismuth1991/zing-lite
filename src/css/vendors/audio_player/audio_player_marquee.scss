@@ -1,8 +1,9 @@
 .marquee {
-  width: 168px;
-  align-self: flex-start;
+  width: 100px;
+  flex: 0 0 100%;
   overflow: hidden;
   white-space: nowrap;
+  padding: 5px;
 }
 
 .marquee p {
@@ -10,8 +11,6 @@
   padding-left: 100%;
   text-indent: 0;
   animation: marquee 10s linear infinite;
-  margin-bottom: 0px;
-  padding-bottom: 5px;
 }
 
 .marquee img {

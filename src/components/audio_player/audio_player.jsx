@@ -96,39 +96,39 @@ class AudioPlayer extends React.Component {
           <div className="component-wrapper">
             <Marquee title={title} artist={artist} artistAvatar={artistAvatar} />
 
-            <div className="audio-player-controls">
-              <BackwardButton
-                isPlaying={isPlaying}
-                backward={backward}
-                playAudio={this.playAudio}
-              />
-              <PlayPauseButton
-                isPlaying={isPlaying}
-                playAudio={this.playAudio}
-                pauseAudio={this.pauseAudio}
-              />
-              <ForwardButton
-                isPlaying={isPlaying}
-                forward={forward}
-                playAudio={this.playAudio}
-              />
-              <ShuffleButton
-                isOnShuffle={isOnShuffle}
-                toggleShuffle={this.toggleShuffle}
-              />
-              <LoopButton
-                isEndOfLoop={isEndOfLoop}
-                isOnLoop={isOnLoop}
-                toggleLoop={this.toggleLoop}
-              />
-              <VolumeSlider
-                volume={volume}
-                preMuteVolume={preMuteVolume}
-                handleMute={this.handleMute}
-                handleUnmute={this.handleUnmute}
-                handleVolume={this.handleVolume}
-              />
-            </div>
+            <BackwardButton
+              isPlaying={isPlaying}
+              backward={backward}
+              playAudio={this.playAudio}
+            />
+            <PlayPauseButton
+              isPlaying={isPlaying}
+              playAudio={this.playAudio}
+              pauseAudio={this.pauseAudio}
+            />
+            <ForwardButton
+              isPlaying={isPlaying}
+              forward={forward}
+              playAudio={this.playAudio}
+            />
+            <div style={{ flex: '1' }} />
+            <ShuffleButton
+              isOnShuffle={isOnShuffle}
+              toggleShuffle={this.toggleShuffle}
+            />
+            <LoopButton
+              isEndOfLoop={isEndOfLoop}
+              isOnLoop={isOnLoop}
+              toggleLoop={this.toggleLoop}
+            />
+            <div style={{ flex: '1' }} />
+            <VolumeSlider
+              volume={volume}
+              preMuteVolume={preMuteVolume}
+              handleMute={this.handleMute}
+              handleUnmute={this.handleUnmute}
+              handleVolume={this.handleVolume}
+            />
 
             <SeekSlider
               seekValue={seekValue}

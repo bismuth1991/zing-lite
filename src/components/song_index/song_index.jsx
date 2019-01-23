@@ -38,7 +38,7 @@ class SongIndex extends React.Component {
     const { songs } = this.props;
 
     return (
-      <ul className="Grid Grid--justifyCenter">
+      <ul className="Grid Grid--justifyFlexStart">
         {songs.map(song => (
           <li className="Grid-cell Grid-cell--autoSize" key={song.id}>
             <SongIndexItem {...song} />

@@ -1,13 +1,15 @@
 .audio-player-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  max-width: 320px;
 }
 
 .component-wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
 }
 
