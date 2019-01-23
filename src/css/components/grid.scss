@@ -5,8 +5,17 @@
   margin: 0;
   padding: 0;
 }
+.Grid--justifySpaceAround {
+  justify-content: space-around;
+}
+.Grid--center {
+  align-items: center;
+}
 
 .Grid-cell {
   flex: 1;
+}
+.Grid-cell--center {
+  align-self: center;
 }
 

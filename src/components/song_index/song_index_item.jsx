@@ -12,7 +12,6 @@ class SongIndexItem extends React.Component {
         <figure>
           <img
             className="Feature-image"
-            // style={{ maxHeight: '130px' }}
             src={coverImage}
             alt={title}
           />
