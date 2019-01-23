@@ -6,21 +6,21 @@ import SongIndexContainer from './song_index/song_index_container';
 import AudioPlayerContainer from './audio_player/audio_player_container';
 
 const App = () => (
-  <>
-    <nav className="HolyGrail-nav">Navigation</nav>
+  <div className="Main">
+    <nav className="Main-nav">Navigation</nav>
 
-    <main className="HolyGrail-body">
-      <article className="HolyGrail-content">
+    <main className="Main-body">
+      <div className="Main-content">
         <Route path="/home" component={SongIndexContainer} />
-      </article>
+      </div>
 
-      <aside className="HolyGrail-aside">
+      <aside className="Main-aside">
         <Route path="/home" component={AudioPlayerContainer} />
       </aside>
 
       <Route path="/" component={RootPage} />
     </main>
-  </>
+  </div>
 );
 
 export default App;

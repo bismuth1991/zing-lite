@@ -1,0 +1,44 @@
+.audio-player-controls {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.audio-player-controls button {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #b3b3b3;
+  outline: none;
+  padding: 5px;
+}
+
+.audio-player-controls button i {
+  font-size: 20px;
+}
+.audio-player-controls .fa-play-circle,
+.audio-player-controls .fa-pause-circle {
+  font-size: 32px;
+}
+
+.audio-player-controls .fa-random {
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.audio-player-controls .fa-redo-alt {
+  font-size: 14px;
+}
+
+.audio-player-controls button:hover {
+  color: white;
+}
+
+.audio-player-controls .active {
+  color: white;
+}
+
+.volume-wrapper:hover button {
+  color:white;
+}
