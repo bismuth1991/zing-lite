@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  color: white;
+  background-color: #1d1924;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+p {
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: square;
+  margin: 0 0 1.5em;
+  padding: 0 0 0 1.5em;
+}
+
+li {
+  margin-bottom: 0.333em;
+}
+
+figure {
+  margin: 0;
+}
+
+strong {
+  font-weight: 600;
+}

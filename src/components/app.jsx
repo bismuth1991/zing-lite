@@ -7,7 +7,16 @@ import AudioPlayerContainer from './audio_player/audio_player_container';
 
 const App = () => (
   <div className="Main">
-    <nav className="Main-nav">Navigation</nav>
+    <nav className="Main-nav">
+      <ul className="Grid Grid--justifyFlexStart Grid--alignItemsCenter" style={{ height: '60px' }}>
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/home">Personal Playlists</a></li>
+        <li><a href="#/home">Search</a></li>
+        <div style={{ flex: '1' }} />
+        <li><a href="#/home">Login</a></li>
+        <li><a href="#/home">Signup</a></li>
+      </ul>
+    </nav>
 
     <main className="Main-body">
       <div className="Main-content">
