@@ -35,13 +35,17 @@ class SongIndex extends React.Component {
   }
 
   render() {
-    const { songs } = this.props;
+    const { songs, forward, userClickPlay } = this.props;
 
     return (
       <ul className="Grid Grid--justifyCenter">
         {songs.map(song => (
           <li className="Grid-cell u-1of2" key={song.id}>
-            <SongIndexItem {...song} />
+            <SongIndexItem
+              {...song}
+              userClickPlay={userClickPlay}
+              forward={forward}
+            />
           </li>
         ))}
       </ul>
@@ -51,6 +55,8 @@ class SongIndex extends React.Component {
 
 SongIndex.propTypes = {
   fetchSomeSongs: func.isRequired,
+  userClickPlay: func.isRequired,
+  forward: func.isRequired,
   songs: arrayOf(shape({
     id: number,
     title: string,

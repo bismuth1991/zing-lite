@@ -1,8 +1,18 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { number, string, func } from 'prop-types';
 
 class SongIndexItem extends React.Component {
-  componentDidMount() {}
+  constructor() {
+    super();
+
+    this.handlePlay = this.handlePlay.bind(this);
+  }
+
+  handlePlay() {
+    const { id, userClickPlay, forward } = this.props;
+    userClickPlay(id);
+    forward();
+  }
 
   render() {
     const { title, artist, coverImage } = this.props;
@@ -16,7 +26,9 @@ class SongIndexItem extends React.Component {
             alt={title}
           />
 
-          <button type="button"><i className="far fa-play-circle fade" /></button>
+          <button type="button" onClick={this.handlePlay}>
+            <i className="far fa-play-circle fade" />
+          </button>
         </figure>
 
         <p className="Feature-description">{title}</p>
@@ -27,9 +39,12 @@ class SongIndexItem extends React.Component {
 }
 
 SongIndexItem.propTypes = {
+  id: number.isRequired,
   title: string.isRequired,
   artist: string.isRequired,
   coverImage: string.isRequired,
+  userClickPlay: func.isRequired,
+  forward: func.isRequired,
 };
 
 export default SongIndexItem;
