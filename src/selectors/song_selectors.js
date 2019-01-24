@@ -20,3 +20,11 @@ export const getSongsInfo = ({ entities }) => {
     getSongInfo(song, artists, albums)
   ));
 };
+
+export const getPlaylistSongsInfo = ({ entities, session: { audioPlayer } }) => {
+  const { songs, artists, albums } = entities;
+
+  return audioPlayer.songIds.map(
+    songId => getSongInfo(songs[songId], artists, albums),
+  );
+};
