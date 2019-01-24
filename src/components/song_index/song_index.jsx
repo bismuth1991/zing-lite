@@ -14,11 +14,12 @@ class SongIndex extends React.Component {
 
   componentDidMount() {
     const songIndex = document.getElementById('song-index');
-    this.scrollListener = songIndex.addEventListener('scroll', this.fetchMoreSongs);
+    songIndex.addEventListener('scroll', this.fetchMoreSongs);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollListener);
+    const songIndex = document.getElementById('song-index');
+    songIndex.removeEventListener('scroll', this.fetchMoreSongs);
   }
 
   fetchMoreSongs() {
