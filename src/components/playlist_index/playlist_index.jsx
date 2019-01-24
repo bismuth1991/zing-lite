@@ -21,20 +21,19 @@ class PlaylistIndex extends React.Component {
       playingSongId,
     } = this.props;
 
-    const isPlaying = (songId, playingId) => (
-      songId === playingId ? 'playing' : ''
-    );
-
     return (
       <ul>
         {songs.map(song => (
           <li
-            className={`Grid-cell u-full ${isPlaying(song.id, playingSongId)}`}
+            className={`
+              PlaylistIndexItem Grid-cell u-full 
+              ${song.id === playingSongId ? 'playing' : ''}
+            `}
             key={song.id}
             role="presentation"
             onClick={this.handleChangeSong(song.id)}
           >
-            <PlaylistIndexItem {...song} />
+            <PlaylistIndexItem {...song} isPlaying={song.id === playingSongId} />
           </li>
         ))}
       </ul>
