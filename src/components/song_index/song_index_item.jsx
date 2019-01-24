@@ -15,6 +15,8 @@ class SongIndexItem extends React.Component {
             src={coverImage}
             alt={title}
           />
+
+          <button type="button"><i className="far fa-play-circle fade" /></button>
         </figure>
 
         <p className="Feature-description">{title}</p>

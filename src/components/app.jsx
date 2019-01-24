@@ -18,7 +18,7 @@ const App = () => (
       </div>
 
       <aside className="Main-aside">
-        <Route path="/home" component={AudioPlayerContainer} />
+        <Route path="/" component={AudioPlayerContainer} />
       </aside>
 
       <Route path="/" component={RootPage} />
