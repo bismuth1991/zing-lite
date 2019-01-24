@@ -1,6 +1,6 @@
 input[type="range"].range { 
   cursor: pointer;
-  height: 9.5px;
+  height: 7.5px;
   -webkit-appearance: none; 
   z-index: 200; 
   border: 1px solid #b3b3b3; 
@@ -19,8 +19,8 @@ input[type="range"].range:focus {
 
 input[type="range"].range::-webkit-slider-thumb {
   -webkit-appearance: none; 
-  width: 10px; 
-  height: 10px; 
+  width: 8px; 
+  height: 8px; 
   background-color: #815fdd; 
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8a6fd6), to(#815fdd)); 
   background-image: -webkit-linear-gradient(right, #8a6fd6, #815fdd); 

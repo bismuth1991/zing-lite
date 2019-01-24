@@ -1,7 +1,6 @@
 .Main {
   width: 100vw;
   height: 100vh;
-  border: 5px solid white;
   overflow:hidden;
   display: flex;
   flex-direction: column;
@@ -11,7 +10,7 @@
   order: -1;
   position: sticky;
   top: 0;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid  #b3b3b3;
 }
 
 .Main-body {
@@ -32,7 +31,7 @@
 }
 
 .Main-aside {
-  padding: 5px 10px;
+  padding: 8px 15px 15px 10px;
   flex: 1;
-  border-top: 2px solid white;
+  border-top: 2px solid  #b3b3b3;
 }
