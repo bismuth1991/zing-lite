@@ -4,26 +4,38 @@ import { shape, arrayOf, number, string, func } from 'prop-types';
 import PlaylistIndexItem from './playlist_index_item';
 
 class PlaylistIndex extends React.Component {
-  componentDidMount() {}
+  constructor() {
+    super();
+
+    this.handlePlay = this.handlePlay.bind(this);
+  }
+
+  handlePlay() {
+    const { id, userClickPlay, forward } = this.props;
+    userClickPlay(id);
+    forward();
+  }
 
   render() {
     const {
       songs,
       playingSongId,
-      userClickPlay,
-      forward,
     } = this.props;
+
+    const isPlaying = (songId, playingId) => (
+      songId === playingId ? 'playing' : ''
+    );
 
     return (
       <ul>
         {songs.map(song => (
-          <li className="Grid-cell u-full" key={song.id}>
-            <PlaylistIndexItem
-              {...song}
-              playingSongId={playingSongId}
-              userClickPlay={userClickPlay}
-              forward={forward}
-            />
+          <li
+            className={`Grid-cell u-full ${isPlaying(song.id, playingSongId)}`}
+            key={song.id}
+            role="presentation"
+            onClick={this.handlePlay}
+          >
+            <PlaylistIndexItem {...song} />
           </li>
         ))}
       </ul>

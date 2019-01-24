@@ -5,6 +5,7 @@ import RootPage from './main/root_page_container';
 import NavBar from './nav-bar/nav_bar';
 import SongIndexContainer from './song_index/song_index_container';
 import AudioPlayerContainer from './audio_player/audio_player_container';
+import PlaylistIndexContainer from './playlist_index/playlist_index_container';
 
 const App = () => (
   <div className="Main">
@@ -15,6 +16,7 @@ const App = () => (
     <main className="Main-body">
       <div className="Main-content" id="song-index">
         <Route path="/home" component={SongIndexContainer} />
+        <Route path="/playlist" component={PlaylistIndexContainer} />
       </div>
 
       <aside className="Main-aside">
