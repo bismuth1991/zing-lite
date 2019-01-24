@@ -1,15 +1,12 @@
 import React from 'react';
-import { func, bool } from 'prop-types';
+import { func } from 'prop-types';
 
 const ForwardButton = (props) => {
-  const { forward, playAudio, isPlaying } = props;
+  const { forward, playAudio } = props;
 
   const playNextSong = () => {
     forward();
-
-    if (isPlaying) {
-      window.setTimeout(() => { playAudio(); }, 0);
-    }
+    window.setTimeout(() => { playAudio(); }, 0);
   };
 
   return (
@@ -22,7 +19,6 @@ const ForwardButton = (props) => {
 ForwardButton.propTypes = {
   forward: func.isRequired,
   playAudio: func.isRequired,
-  isPlaying: bool.isRequired,
 };
 
 export default ForwardButton;

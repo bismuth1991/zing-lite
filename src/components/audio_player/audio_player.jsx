@@ -97,7 +97,6 @@ class AudioPlayer extends React.Component {
             <Marquee title={title} artist={artist} artistAvatar={artistAvatar} />
 
             <BackwardButton
-              isPlaying={isPlaying}
               backward={backward}
               playAudio={this.playAudio}
             />
@@ -107,7 +106,6 @@ class AudioPlayer extends React.Component {
               pauseAudio={this.pauseAudio}
             />
             <ForwardButton
-              isPlaying={isPlaying}
               forward={forward}
               playAudio={this.playAudio}
             />

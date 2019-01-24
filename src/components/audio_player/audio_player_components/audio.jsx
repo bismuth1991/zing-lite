@@ -39,6 +39,7 @@ const Audio = (props) => {
       src={url}
       ref={audioRef}
       onLoadedMetadata={getTotalAudioTime}
+      onDurationChange={handlePlay}
       onTimeUpdate={updateCurrentAudioTime}
       onVolumeChange={updateVolume}
       onPause={handlePause}
