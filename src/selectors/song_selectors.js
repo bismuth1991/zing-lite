@@ -28,3 +28,8 @@ export const getPlaylistSongsInfo = ({ entities, session: { audioPlayer } }) => 
     songId => getSongInfo(songs[songId], artists, albums),
   );
 };
+
+export const getPlayingSongId = ({ session: { audioPlayer } }) => {
+  const { songIds, playingSongIndex } = audioPlayer;
+  return songIds[playingSongIndex];
+};
