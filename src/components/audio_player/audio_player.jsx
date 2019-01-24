@@ -90,12 +90,12 @@ class AudioPlayer extends React.Component {
         />
 
 
-        <div className="audio-player-container">
+        <div className="AudioPlayerContainer">
           <SpinningDisc album={album} coverImage={coverImage} />
 
-          <div className="component-wrapper">
-            <Marquee title={title} artist={artist} artistAvatar={artistAvatar} />
+          <Marquee title={title} artist={artist} artistAvatar={artistAvatar} />
 
+          <div className="Controls1">
             <BackwardButton
               backward={backward}
               playAudio={this.playAudio}
@@ -109,7 +109,9 @@ class AudioPlayer extends React.Component {
               forward={forward}
               playAudio={this.playAudio}
             />
-            <div style={{ flex: '1' }} />
+          </div>
+
+          <div className="Controls2">
             <ShuffleButton
               isOnShuffle={isOnShuffle}
               toggleShuffle={this.toggleShuffle}
@@ -119,7 +121,6 @@ class AudioPlayer extends React.Component {
               isOnLoop={isOnLoop}
               toggleLoop={this.toggleLoop}
             />
-            <div style={{ flex: '1' }} />
             <VolumeSlider
               volume={volume}
               preMuteVolume={preMuteVolume}
@@ -127,14 +128,14 @@ class AudioPlayer extends React.Component {
               handleUnmute={this.handleUnmute}
               handleVolume={this.handleVolume}
             />
-
-            <SeekSlider
-              seekValue={seekValue}
-              currentAudioTime={currentAudioTime}
-              totalAudioTime={totalAudioTime}
-              handleSeek={this.handleSeek}
-            />
           </div>
+
+          <SeekSlider
+            seekValue={seekValue}
+            currentAudioTime={currentAudioTime}
+            totalAudioTime={totalAudioTime}
+            handleSeek={this.handleSeek}
+          />
         </div>
       </>
     );

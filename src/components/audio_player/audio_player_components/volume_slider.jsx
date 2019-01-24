@@ -30,20 +30,18 @@ const VolumeSlider = (props) => {
   }
 
   return (
-    <div className="volume-wrapper">
+    <>
+      {volumeButton}
+
       <input
-        className="volume-slider range round vertical-highest-first"
         type="range"
-        orient="vertical"
         min="0"
         max="100"
         step="1"
         value={volume}
         onChange={handleVolume}
       />
-
-      {volumeButton}
-    </div>
+    </>
   );
 };
 

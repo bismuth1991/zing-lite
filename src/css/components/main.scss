@@ -7,7 +7,6 @@
 }
 
 .Main-nav {
-  order: -1;
   position: sticky;
   top: 0;
   border-bottom: 2px solid  #b3b3b3;
@@ -20,7 +19,7 @@
 }
 
 .Main-content {
-  flex: 1;
+  font-size: 0.95rem;
   overflow: scroll;
   height: 100vh;
   margin: 10px;
@@ -31,7 +30,11 @@
 }
 
 .Main-aside {
-  padding: 8px 15px 15px 10px;
-  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0.6em 1.2em 1.2em 0.8em;
+  width: 100%;
+  height: 7.5rem;
   border-top: 2px solid  #b3b3b3;
+  font-size: 0.75rem;
 }

@@ -5,12 +5,11 @@ const Marquee = (props) => {
   const { title, artist, artistAvatar } = props;
 
   return (
-    <div className="marquee">
+    <div className="Marquee">
       <p>
         <img
           src={artistAvatar}
           alt={artist}
-          style={{ height: '25px', borderRadius: '25%', display: 'inline-block' }}
         />
         <span>{` ${title} - `}</span>
         <span>{artist}</span>

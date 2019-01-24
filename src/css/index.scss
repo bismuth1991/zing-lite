@@ -1,4 +1,5 @@
 @import './components/base/base.scss';
+@import './components/base/fluid_typo_mixin.scss';
 @import './components/base/media.scss';
 @import './components/base/variables.scss';
 @import './components/base/utils.scss';
@@ -7,6 +8,7 @@
 
 @import './components/base/feature.scss';
 
+@import './components/audio_player.scss';
 @import './components/song_index/song_index_item.scss';
 
 @import './vendors/audio_player/audio_player_main.scss';

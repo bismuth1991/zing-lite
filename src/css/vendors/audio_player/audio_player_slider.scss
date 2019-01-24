@@ -1,4 +1,4 @@
-input[type="range"].range { 
+input[type="range"] { 
   cursor: pointer;
   height: 7.5px;
   -webkit-appearance: none; 
@@ -12,12 +12,12 @@ input[type="range"].range {
   background-image: -o-linear-gradient(right, #b3b3b3, white); 
 }
 
-input[type="range"].range:focus {
+input[type="range"]:focus {
   border: 0 !important;
   outline: none !important; 
 }
 
-input[type="range"].range::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; 
   width: 8px; 
   height: 8px; 
@@ -29,23 +29,15 @@ input[type="range"].range::-webkit-slider-thumb {
   background-image: -o-linear-gradient(right, #8a6fd6, #815fdd); 
 }
 
-input[type="range"].round {
+input[type="range"] {
   -webkit-border-radius: 20px; 
   -moz-border-radius: 20px; 
   border-radius: 20px; 
 }
 
-input[type="range"].round::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
   -o-border-radius: 5px; 
   border-radius: 5px;
-}
-
-.vertical-highest-first {
-  -webkit-transform:rotate(270deg); 
-  -moz-transform:rotate(270deg); 
-  -o-transform:rotate(270deg); 
-  -ms-transform:rotate(270deg); 
-  transform:rotate(270deg); 
 }

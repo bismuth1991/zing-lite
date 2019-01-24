@@ -7,9 +7,8 @@ const SeekSlider = (props) => {
   } = props;
 
   return (
-    <div className="seek-slider-wrapper">
+    <div className="SeekSlider">
       <input
-        className="seek-slider slider range round horizontal-lowest-first"
         type="range"
         min="0"
         max="100"

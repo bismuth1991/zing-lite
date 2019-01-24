@@ -1,6 +1,16 @@
+.Main-content figure {
+  margin: 0 auto;
+}
+
 .Main-content .Feature > figure {
   position: relative;
   display: inline-block;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.Main-content .Feature p {
+  text-align: center;
 }
 
 .Main-content .Feature > figure button {

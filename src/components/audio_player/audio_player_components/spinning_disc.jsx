@@ -5,7 +5,7 @@ const SpinningDisc = (props) => {
   const { album, coverImage } = props;
 
   return (
-    <figure className="album-cover">
+    <figure className="SpinningDisc">
       <img src={coverImage} alt={album} />
     </figure>
   );
