@@ -10,11 +10,11 @@ class SongIndex extends React.Component {
     this.state = { offSet: 20 };
 
     this.fetchMoreSongs = this.fetchMoreSongs.bind(this);
-    window.addEventListener('scroll', this.fetchMoreSongs);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.fetchMoreSongs);
+  componentDidMount() {
+    const songIndex = document.getElementById('song-index');
+    songIndex.addEventListener('scroll', this.fetchMoreSongs);
   }
 
   fetchMoreSongs() {
@@ -23,10 +23,10 @@ class SongIndex extends React.Component {
 
     if (offSet > 35) return;
 
-    const { innerHeight } = window;
-    const { scrollTop, offsetHeight } = document.documentElement;
+    const songIndex = document.getElementById('song-index');
+    const { scrollTop, offsetHeight, scrollHeight } = songIndex;
 
-    if (innerHeight + scrollTop > offsetHeight - 1) {
+    if (offsetHeight + scrollTop > scrollHeight - 1) {
       fetchSomeSongs(offSet);
       this.setState(state => ({
         offSet: state.offSet + 20,

@@ -22,7 +22,7 @@
 .Main-content {
   flex: 1;
   overflow: scroll;
-  height: 768px;
+  height: 100vh;
   margin: 10px;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
