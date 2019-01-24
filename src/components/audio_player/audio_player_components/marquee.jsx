@@ -11,8 +11,7 @@ const Marquee = (props) => {
           src={artistAvatar}
           alt={artist}
         />
-        <span>{` ${title} - `}</span>
-        <span>{artist}</span>
+        <span>{` ${title} - ${artist}`}</span>
       </p>
     </div>
   );
