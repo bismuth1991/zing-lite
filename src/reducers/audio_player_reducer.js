@@ -35,9 +35,20 @@ const audioPlayerReducer = (state = initialState, action) => {
       return newState;
     }
     case USER_CLICK_PLAY: {
+      const { songIds, playingSongIndex } = state;
+      let newSongIds = songIds.slice();
+
+      // remove song if repeated
+      newSongIds = newSongIds.filter(id => id !== action.songId);
+      newSongIds = [
+        ...newSongIds.slice(0, playingSongIndex + 1),
+        action.songId,
+        ...newSongIds.slice(playingSongIndex + 2, newSongIds.length),
+      ];
+
       return {
         ...state,
-        songIds: [...state.songIds, action.songId],
+        songIds: newSongIds,
       };
     }
     case CHANGE_SONG: {
