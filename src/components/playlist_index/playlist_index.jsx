@@ -10,9 +10,9 @@ class PlaylistIndex extends React.Component {
     this.handleChangeSong = this.handleChangeSong.bind(this);
   }
 
-  handleChangeSong() {
-    const { id, changeSong } = this.props;
-    changeSong(id);
+  handleChangeSong(id) {
+    const { changeSong } = this.props;
+    return () => changeSong(id);
   }
 
   render() {
@@ -32,7 +32,7 @@ class PlaylistIndex extends React.Component {
             className={`Grid-cell u-full ${isPlaying(song.id, playingSongId)}`}
             key={song.id}
             role="presentation"
-            onClick={this.handleChangeSong}
+            onClick={this.handleChangeSong(song.id)}
           >
             <PlaylistIndexItem {...song} />
           </li>
@@ -44,6 +44,7 @@ class PlaylistIndex extends React.Component {
 
 PlaylistIndex.propTypes = {
   playingSongId: number.isRequired,
+  changeSong: func.isRequired,
   songs: arrayOf(shape({
     id: number,
     title: string,

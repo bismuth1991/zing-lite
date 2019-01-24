@@ -1,4 +1,10 @@
-import { FORWARD, BACKWARD, SHUFFLE, USER_CLICK_PLAY } from '../actions/audio_player_actions';
+import {
+  FORWARD,
+  BACKWARD,
+  SHUFFLE,
+  USER_CLICK_PLAY,
+  CHANGE_SONG,
+} from '../actions/audio_player_actions';
 
 import {
   forwardLogic,
@@ -32,6 +38,12 @@ const audioPlayerReducer = (state = initialState, action) => {
       return {
         ...state,
         songIds: [...state.songIds, action.songId],
+      };
+    }
+    case CHANGE_SONG: {
+      return {
+        ...state,
+        playingSongIndex: state.songIds.indexOf(action.songId),
       };
     }
     default:
