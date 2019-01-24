@@ -12,4 +12,18 @@
 
 .PlaylistIndexItem > div {
   display: flex;
+  position: relative;
+}
+
+.PlaylistIndexItem:hover .X {
+  display: block;
+  text-decoration: underline;
+}
+.PlaylistIndexItem .X {
+  display: none;
+  position: absolute;
+  padding-right: 0;
+  right: 0;
+  color: #b3b3b3;
+  font-size: 0.8em;
 }

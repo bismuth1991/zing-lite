@@ -4,12 +4,14 @@ import {
   SHUFFLE,
   USER_CLICK_PLAY,
   CHANGE_SONG,
+  REMOVE_SONG,
 } from '../actions/audio_player_actions';
 
 import {
   forwardLogic,
   backwardLogic,
   shuffleLogic,
+  removeSongLogic,
 } from '../utils/audio_player_utils';
 
 
@@ -56,6 +58,10 @@ const audioPlayerReducer = (state = initialState, action) => {
         ...state,
         playingSongIndex: state.songIds.indexOf(action.songId),
       };
+    }
+    case REMOVE_SONG: {
+      const newState = removeSongLogic(state, action);
+      return newState;
     }
     default:
       return state;

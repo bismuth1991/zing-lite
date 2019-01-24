@@ -1,15 +1,31 @@
 import React from 'react';
-import { string, bool } from 'prop-types';
+import { string, bool, number } from 'prop-types';
 import SoundWave from './soundwave';
 
 const PlaylistIndexItem = (props) => {
-  const { title, artist, album, isPlaying } = props;
+  const {
+    id,
+    title,
+    artist,
+    album,
+    isPlaying,
+    handleRemoveSong,
+  } = props;
 
   return (
     <>
       <div>
         {isPlaying ? <SoundWave /> : null}
         <span><h4>{title}</h4></span>
+
+        <button
+          className="X"
+          type="button"
+          onClick={handleRemoveSong(id)}
+        >
+          {/* <i className="fas fa-trash-alt" /> */}
+          <h5>remove</h5>
+        </button>
       </div>
 
       <h5>{`${artist} - ${album}`}</h5>
@@ -18,6 +34,7 @@ const PlaylistIndexItem = (props) => {
 };
 
 PlaylistIndexItem.propTypes = {
+  id: number.isRequired,
   title: string.isRequired,
   artist: string.isRequired,
   album: string.isRequired,

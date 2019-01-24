@@ -8,11 +8,23 @@ class PlaylistIndex extends React.Component {
     super();
 
     this.handleChangeSong = this.handleChangeSong.bind(this);
+    this.handleRemoveSong = this.handleRemoveSong.bind(this);
   }
 
   handleChangeSong(id) {
     const { changeSong } = this.props;
-    return () => changeSong(id);
+    return (e) => {
+      e.stopPropagation();
+      changeSong(id);
+    };
+  }
+
+  handleRemoveSong(id) {
+    const { removeSong } = this.props;
+    return (e) => {
+      e.stopPropagation();
+      removeSong(id);
+    };
   }
 
   render() {
@@ -33,7 +45,11 @@ class PlaylistIndex extends React.Component {
             role="presentation"
             onClick={this.handleChangeSong(song.id)}
           >
-            <PlaylistIndexItem {...song} isPlaying={song.id === playingSongId} />
+            <PlaylistIndexItem
+              {...song}
+              isPlaying={song.id === playingSongId}
+              handleRemoveSong={this.handleRemoveSong}
+            />
           </li>
         ))}
       </ul>
