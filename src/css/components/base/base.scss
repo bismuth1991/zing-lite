@@ -11,6 +11,13 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+h4, h5, h6 {
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
 p {
   margin: 0;
 }

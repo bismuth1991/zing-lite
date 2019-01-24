@@ -1,14 +1,21 @@
 import React from 'react';
+import { string } from 'prop-types';
 
 const PlaylistIndexItem = (props) => {
   const { title, artist, album } = props;
 
   return (
       <>
-        <h3>{title}</h3>
-        <h4>{`${artist} - ${album}`}</h4>
+        <h4>{title}</h4>
+        <h5>{`${artist} - ${album}`}</h5>
       </>
   );
+};
+
+PlaylistIndexItem.propTypes = {
+  title: string.isRequired,
+  artist: string.isRequired,
+  album: string.isRequired,
 };
 
 export default PlaylistIndexItem;
