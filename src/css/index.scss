@@ -2,20 +2,11 @@
 @import './components/base/fluid_typo_mixin.scss';
 @import './components/base/media.scss';
 @import './components/base/variables.scss';
-@import './components/base/utils.scss';
-@import './components/main.scss';
-@import './components/grid.scss';
+@import './components/base/main.scss';
+@import './components/base/grid.scss';
 
 @import './components/base/feature.scss';
 
 @import './components/audio_player.scss';
-@import './components/song_index/song_index_item.scss';
+@import './components/song_index_item.scss';
 
-@import './vendors/audio_player/audio_player_main.scss';
-@import './vendors/audio_player/audio_player_animations.scss';
-@import './vendors/audio_player/audio_player_buttons.scss';
-@import './vendors/audio_player/audio_player_slider.scss';
-@import './vendors/audio_player/audio_player_seek_slider.scss';
-@import './vendors/audio_player/audio_player_volume_slider.scss';
-@import './vendors/audio_player/audio_player_spinning_disc.scss';
-@import './vendors/audio_player/audio_player_marquee.scss';
