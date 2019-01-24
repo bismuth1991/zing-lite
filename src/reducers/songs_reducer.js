@@ -1,6 +1,16 @@
 import { RECEIVE_SONGS } from '../actions/song_actions';
 
-const songsReducer = (state = {}, action) => {
+const initialState = {
+  2: {
+    id: 2,
+    title: 'Ha Trang',
+    url: 'https://www.dropbox.com/s/ezijh6nzgutwah9/HaTrang.mp3?dl=1',
+    artistId: 7,
+    albumId: 12,
+  },
+};
+
+const songsReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_SONGS:
       return {

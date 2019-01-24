@@ -1,9 +1,9 @@
-.Feature > figure {
+.Main-content .Feature > figure {
   position: relative;
   display: inline-block;
 }
 
-.Feature > figure button {
+.Main-content .Feature > figure button {
   display: none;
   position: absolute;
   top: 50%;
@@ -11,8 +11,25 @@
   transform: translate(-50%, -50%);
 }
 
-.Feature > figure:hover button {
-  display: block;
+.Main-content .Feature > figure button {
+  color: white;
+}
+
+.Main-content .Feature > figure button i {
+  font-size: 40px;
+}
+
+.Main-content .Feature-image {
+  filter: brightness(80%);
+}
+
+.Main-content .Feature > figure:hover {
+  button {
+    display: block;
+  }
+  .Feature-image {
+    filter: brightness(100%);
+  }
 }
 
 

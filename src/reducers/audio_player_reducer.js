@@ -8,8 +8,8 @@ import {
 
 
 const initialState = {
-  playingSongIndex: 1,
-  songIds: [1, 2, 3, 4, 5, 6, 7, 8],
+  playingSongIndex: 0,
+  songIds: [2],
   prevSongIndex: 0,
   playedSongIndices: [],
 };
