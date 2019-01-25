@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -18,9 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
     <Root store={store} />,
     root,
   );
-
-  axios.defaults.baseUrl = 'https://zing-lite-rails-api.herokuapp.com';
-  axios.defaults.xsrfCookieName = 'CSRF-TOKEN';
-  axios.defaults.xsrfHeaderName = 'X-CSRF-Token';
-  axios.defaults.withCredentials = true;
 });
