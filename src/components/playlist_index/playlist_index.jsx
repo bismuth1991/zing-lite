@@ -34,11 +34,11 @@ class PlaylistIndex extends React.Component {
     } = this.props;
 
     return (
-      <ul>
+      <ul className="PlaylistIndexContainer">
         {songs.map(song => (
           <li
             className={`
-              PlaylistIndexItem Grid-cell u-full 
+              PlaylistIndexItem 
               ${song.id === playingSongId ? 'playing' : ''}
             `}
             key={song.id}
