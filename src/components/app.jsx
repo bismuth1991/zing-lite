@@ -13,7 +13,13 @@ const App = () => (
     <NavBar />
     <SearchBar />
 
+    <div className="Main">
+      {/* <Route path="/home" component={SongIndexContainer} />
+      <Route path="/playlist" component={PlaylistIndexContainer} /> */}
+    </div>
+
     <aside className="Aside">
+      <Route path="/" component={RootPage} />
       <Route path="/" component={AudioPlayerContainer} />
     </aside>
 

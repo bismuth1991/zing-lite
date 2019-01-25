@@ -1,0 +1,19 @@
+.SpinningDisc {
+  grid-area: SpinningDisc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SpinningDisc > img {
+  justify-self: center;
+  object-fit: cover;
+  max-height: 75%;
+  border-radius: 50%;
+  animation: spin infinite 20s linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

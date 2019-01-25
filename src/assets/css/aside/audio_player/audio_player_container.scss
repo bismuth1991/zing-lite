@@ -1,0 +1,14 @@
+.AudioPlayerContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "SpinningDisc SpinningDisc SpinningDisc SpinningDisc Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee" 
+    "SpinningDisc SpinningDisc SpinningDisc SpinningDisc Controls1 Controls1 Controls1 Controls1 Controls2 Controls2 Controls2 Controls2 Controls2" 
+    "SpinningDisc SpinningDisc SpinningDisc SpinningDisc SeekSlider SeekSlider SeekSlider SeekSlider SeekSlider SeekSlider SeekSlider SeekSlider SeekSlider";
+}
+
+.AudioPlayerContainer { 
+  height: 90%; 
+  width: 90%;
+}

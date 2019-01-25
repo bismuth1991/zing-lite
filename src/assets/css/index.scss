@@ -4,5 +4,12 @@
 
 @import './nav/Nav.scss';
 
+@import './main/Main.scss';
+
 @import './aside/Aside.scss';
-@import './aside/audio_player.scss';
+@import './aside/audio_player/audio_player_container.scss';
+@import './aside/audio_player/spinning_disc.scss';
+@import './aside/audio_player/marquee.scss';
+@import './aside/audio_player/controls.scss';
+@import './aside/audio_player/slider.scss';
+@import './aside/audio_player/seek_slider.scss';
