@@ -13,6 +13,11 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    const { clearSessionErrors } = this.props;
+    clearSessionErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.target.value,
@@ -25,8 +30,8 @@ class SessionForm extends React.Component {
     const { processForm } = this.props;
     const { username, password } = this.state;
 
-    const user = { username, password };
-    processForm(user);
+    const userData = { user: { username, password } };
+    processForm(userData);
 
     this.setState({
       username: '',
@@ -40,9 +45,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {errors.map(error => (
-          <li key={Date.now()}>
-            {error}
-          </li>
+          <li key={Date.now()}>{error}</li>
         ))}
       </ul>
     );
@@ -71,6 +74,8 @@ class SessionForm extends React.Component {
           <br />
           <button type="submit">{formType}</button>
         </form>
+
+        {this.renderErrors()}
       </div>
     );
   }
@@ -80,6 +85,7 @@ SessionForm.propTypes = {
   formType: oneOf(['LOG IN', 'SIGN UP']).isRequired,
   errors: arrayOf(string).isRequired,
   processForm: func.isRequired,
+  clearSessionErrors: func.isRequired,
 };
 
 export default SessionForm;
