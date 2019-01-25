@@ -8,7 +8,8 @@ import SongIndexContainer from './song_index/song_index_container';
 import AudioPlayerContainer from './audio_player/audio_player_container';
 import PlaylistIndexContainer from './playlist_index/playlist_index_container';
 import SearchBar from './nav/search_bar';
-import SessionForm from './main/session_form/session_form';
+import LoginFormContainer from './main/session_form/login_form_container';
+import SignupFormContainer from './main/session_form/signup_form_container';
 
 const App = () => (
   <div className="Site">
@@ -19,7 +20,8 @@ const App = () => (
       {/* <Route path="/home" component={SongIndexContainer} />
       <Route path="/playlist" component={PlaylistIndexContainer} /> */}
 
-      <Route path="/profile/login" component={SessionForm} />
+      <Route path="/profile/login" component={LoginFormContainer} />
+      <Route path="/profile/signup" component={SignupFormContainer} />
     </div>
 
     <aside className="Aside">
