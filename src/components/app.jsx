@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import AuthRoute from '../utils/route_utils';
+import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 
 import RootPage from './main/root_page_container';
 import NavBar from './nav/nav_bar';
@@ -20,8 +20,9 @@ const App = () => (
       {/* <Route path="/home" component={SongIndexContainer} />
       <Route path="/playlist" component={PlaylistIndexContainer} /> */}
 
-      <Route path="/profile/login" component={LoginFormContainer} />
-      <Route path="/profile/signup" component={SignupFormContainer} />
+      <ProtectedRoute exact path="/profile" component={SignupFormContainer} />
+      <AuthRoute path="/profile/login" component={LoginFormContainer} />
+      <AuthRoute path="/profile/signup" component={SignupFormContainer} />
     </div>
 
     <aside className="Aside">
