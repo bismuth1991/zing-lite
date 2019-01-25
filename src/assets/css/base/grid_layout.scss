@@ -1,0 +1,55 @@
+body { 
+  height: 100vh; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.Site { 
+  height: 640px; 
+  width: 360px; 
+  color: white;
+}
+
+.Site {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 0.6fr 1fr 1fr 1fr 1fr 0.5fr 1fr;
+  grid-template-areas: 
+    "Nav-Home Nav-Playlist Nav-Profile" 
+    "Nav-Search Nav-Search Nav-About" 
+    "Main Main Main" 
+    "Main Main Main" 
+    "Main Main Main" 
+    "Main Main Main" 
+    "Aside Aside Aside" 
+    "Aside Aside Aside";
+}
+
+.Main { 
+  grid-area: Main; 
+}
+
+.Aside { 
+  grid-area: Aside; 
+}
+
+.Nav-Home { 
+  grid-area: Nav-Home; 
+}
+
+.Nav-Playlist { 
+  grid-area: Nav-Playlist; 
+}
+
+.Nav-Profile { 
+  grid-area: Nav-Profile; 
+}
+
+.Nav-About { 
+  grid-area: Nav-About; 
+}
+
+.Nav-Search { 
+  grid-area: Nav-Search; 
+}

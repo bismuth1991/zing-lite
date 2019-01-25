@@ -5,8 +5,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import 'normalize.css';
-// import './assets/css/main.scss';
-import './css/index.scss';
+// import './css/index.scss';
+import './assets/css/index.scss';
 
 
 document.addEventListener('DOMContentLoaded', () => {

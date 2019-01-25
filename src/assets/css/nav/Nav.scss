@@ -1,0 +1,36 @@
+.Nav-Home,
+.Nav-Playlist,
+.Nav-Profile,
+.Nav-About,
+.Nav-Search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.Nav-Home,
+.Nav-Playlist,
+.Nav-Profile {
+  background-color: $light-pink;
+  border: 1px solid white;
+}
+
+.Nav-About,
+.Nav-Search {
+  background-color: $pink;
+  border-top: 2px solid white;
+}
+
+.Nav-Search {
+  justify-content: flex-end;
+}
+.Nav-Search input {
+  width: 90%;
+  color: white;
+  border-bottom: 1px solid white;
+}
+.Nav-Search input::placeholder {
+  text-align: center;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.8);
+}

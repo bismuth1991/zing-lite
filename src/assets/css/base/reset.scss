@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #1d1924;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 18px;
+  color: white;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+}
+
+input {
+  background: none;
+  border: none;
+  outline: none;
+  caret-color: white;
+}
