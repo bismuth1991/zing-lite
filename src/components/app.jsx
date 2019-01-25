@@ -10,10 +10,13 @@ import SearchBar from './nav/search_bar';
 
 const App = () => (
   <div className="Site">
-    {/* <nav className="Main-nav"> */}
     <NavBar />
     <SearchBar />
-    {/* </nav> */}
+
+    <aside className="Aside">
+      <Route path="/" component={AudioPlayerContainer} />
+    </aside>
+
 
     {/* <main className="Main-body">
       <div className="Main-content" id="song-index">
@@ -22,7 +25,7 @@ const App = () => (
       </div>
 
       <aside className="Main-aside">
-        <Route path="/" component={AudioPlayerContainer} />
+        <Route path="/" component={AudioPlayerContainer} /
       </aside>
 
       <Route path="/" component={RootPage} />

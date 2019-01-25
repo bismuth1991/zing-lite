@@ -7,24 +7,16 @@ const VolumeSlider = (props) => {
   } = props;
 
   let volumeButton;
-  if (volume >= 50) {
-    volumeButton = (
-      <button type="button" className="volume-button" onClick={handleMute}>
-        <i className="fas fa-volume-up active" />
-      </button>
-    );
-  }
-  if (volume < 50) {
-    volumeButton = (
-      <button type="button" className="volume-button" onClick={handleMute}>
-        <i className="fas fa-volume-down active" />
-      </button>
-    );
-  }
   if (volume === 0) {
     volumeButton = (
       <button type="button" className="volume-button" onClick={handleUnmute(preMuteVolume)}>
         <i className="fas fa-volume-mute" />
+      </button>
+    );
+  } else {
+    volumeButton = (
+      <button type="button" className="volume-button" onClick={handleMute}>
+        <i className="fas fa-volume-up active" />
       </button>
     );
   }
@@ -33,14 +25,14 @@ const VolumeSlider = (props) => {
     <>
       {volumeButton}
 
-      <input
+      {/* <input
         type="range"
         min="0"
         max="100"
         step="1"
         value={volume}
         onChange={handleVolume}
-      />
+      /> */}
     </>
   );
 };
