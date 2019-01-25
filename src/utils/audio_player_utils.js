@@ -82,19 +82,22 @@ export const shuffleLogic = (state) => {
 
 export const removeSongLogic = (state, action) => {
   const { songIds, playingSongIndex, playedSongIndices } = state;
-  const playingSongId = songIds[playingSongIndex];
 
   if (songIds.length === 1) return state;
+
+  const removeSongIndex = songIds.indexOf(action.songId);
 
   const newSongIds = songIds.filter(id => id !== action.songId);
   const newPlayedSongIndices = playedSongIndices.filter(index => index !== playingSongIndex);
 
   let newPlayingSongIndex;
-  if (action.songId === playingSongId) {
-    newPlayingSongIndex = (playingSongIndex + 1);
-    if (newPlayingSongIndex > songIds.length - 1) {
-      newPlayingSongIndex = 0;
-    }
+
+  if (removeSongIndex > playingSongIndex) {
+    newPlayingSongIndex = playingSongIndex;
+  } else if (removeSongIndex <= playingSongIndex) {
+    newPlayingSongIndex = playingSongIndex - 1;
+
+    if (newPlayingSongIndex < 0) newPlayingSongIndex = newSongIds.length - 1;
   }
 
   return {
