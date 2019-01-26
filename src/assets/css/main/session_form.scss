@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   padding: 0.5em;
+  width: 60%
 }
 
 .SessionForm input {
@@ -17,18 +18,24 @@
   border-bottom: 1px solid white;
 }
 
+.SessionForm .errors {
+  align-self: flex-start;
+  list-style-position: inside;
+  font-size: 0.6em;
+  color: $light-pink;
+  padding-inline-start: 0;
+}
+
 .SessionForm button {
-  align-self: center;
   background-color: $pink;
   color: white;
-  width: 90%;
+  width: 100%;
   padding: 0.5em;
   margin: 0.2em;
   border-radius: 4px;
 }
 
 .SessionForm p {
-  align-self: center;
   font-size: 0.6em;
 }
 .SessionForm a {

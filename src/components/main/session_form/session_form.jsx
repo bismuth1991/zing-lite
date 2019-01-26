@@ -20,9 +20,11 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.target.value,
-    });
+    return (e) => {
+      this.setState({
+        [field]: e.target.value,
+      });
+    };
   }
 
   handleSubmit(e) {
@@ -60,15 +62,15 @@ class SessionForm extends React.Component {
           onChange={this.update('password')}
         />
 
-        <ul className="Errors">
-          {errors.map(error => (
-            <li key={Date.now()}>{error}</li>
+        <ul className="errors">
+          {errors.map((error, i) => (
+            <li key={i}>{error}</li>
           ))}
         </ul>
+        <br />
 
         <button type="submit">{formType}</button>
         <button type="submit">DEMO</button>
-
 
         {formType === 'LOG IN'
           ? (
