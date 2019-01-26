@@ -1,19 +1,17 @@
 .Nav-Home,
 .Nav-Playlist,
-.Nav-Profile {
+.Nav-About {
   background-color: $light-pink;
   border: 1px solid white;
 }
 
-.Nav-About,
+.Nav-Profile,
 .Nav-Search {
   background-color: $pink;
   border-top: 2px solid white;
+  border: 1px solid white;
 }
 
-.Nav-Search {
-  justify-content: flex-end;
-}
 .Nav-Search input {
   width: 90%;
   color: white;
