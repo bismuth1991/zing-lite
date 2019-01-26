@@ -1,5 +1,7 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Route, withRouter } from 'react-router-dom';
+import { bool } from 'prop-types';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 
 import RootPage from './main/root_page_container';
@@ -11,25 +13,35 @@ import SearchBar from './nav/search_bar';
 import LoginFormContainer from './main/session_form/login_form_container';
 import SignupFormContainer from './main/session_form/signup_form_container';
 
-const App = () => (
-  <div className="Site">
-    <NavBar />
-    <SearchBar />
+const App = (props) => {
+  const { loggedIn } = props;
 
-    <div className="Main">
-      {/* <Route path="/home" component={SongIndexContainer} />
+  return (
+    <div className={`Site ${loggedIn && 'Site-LoggedIn'}`}>
+      <NavBar />
+      <SearchBar />
+
+      <div className="Main">
+        {/* <Route path="/home" component={SongIndexContainer} />
       <Route path="/playlist" component={PlaylistIndexContainer} /> */}
 
-      <ProtectedRoute exact path="/profile" component={SignupFormContainer} />
-      <AuthRoute path="/profile/login" component={LoginFormContainer} />
-      <AuthRoute path="/profile/signup" component={SignupFormContainer} />
+        <ProtectedRoute exact path="/profile" component={SignupFormContainer} />
+        <AuthRoute path="/profile/login" component={LoginFormContainer} />
+        <AuthRoute path="/profile/signup" component={SignupFormContainer} />
+      </div>
+
+      <aside className="Aside">
+        <Route path="/" component={RootPage} />
+        <Route path="/" component={AudioPlayerContainer} />
+      </aside>
     </div>
+  );
+};
 
-    <aside className="Aside">
-      <Route path="/" component={RootPage} />
-      <Route path="/" component={AudioPlayerContainer} />
-    </aside>
-  </div>
-);
+App.propTypes = {
+  loggedIn: bool.isRequired,
+};
 
-export default App;
+const mapStateToProps = state => ({ loggedIn: Boolean(state.session.user.userId) });
+
+export default withRouter(connect(mapStateToProps, null)(App));

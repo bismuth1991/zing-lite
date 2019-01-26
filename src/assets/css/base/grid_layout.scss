@@ -1,10 +1,3 @@
-body { 
-  height: 100vh; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-}
-
 .Site { 
   width: 360px; 
   height: 640px;
@@ -27,34 +20,26 @@ body {
     "Aside Aside Aside" 
     "Aside Aside Aside";
 }
-
-.Main { 
-  grid-area: Main; 
+.Site-LoggedIn {
+  grid-template-areas: 
+    "Nav-Home Nav-Playlist Nav-About" 
+    "Nav-Search Nav-Profile Nav-Logout" 
+    "Main Main Main" 
+    "Main Main Main" 
+    "Main Main Main" 
+    "Main Main Main" 
+    "Aside Aside Aside" 
+    "Aside Aside Aside";
 }
 
-.Aside { 
-  grid-area: Aside; 
-}
-
-.Nav-Home { 
-  grid-area: Nav-Home; 
-}
-
-.Nav-Playlist { 
-  grid-area: Nav-Playlist; 
-}
-
-.Nav-Profile { 
-  grid-area: Nav-Profile; 
-}
-
-.Nav-About { 
-  grid-area: Nav-About; 
-}
-
-.Nav-Search { 
-  grid-area: Nav-Search; 
-}
+.Main { grid-area: Main; }
+.Aside { grid-area: Aside; }
+.Nav-Home { grid-area: Nav-Home; }
+.Nav-Playlist { grid-area: Nav-Playlist; }
+.Nav-Profile { grid-area: Nav-Profile; }
+.Nav-About { grid-area: Nav-About; }
+.Nav-Search { grid-area: Nav-Search; }
+.Nav-Logout { grid-area: Nav-Logout; }
 
 .Main,
 .Aside,
@@ -62,7 +47,8 @@ body {
 .Nav-About,
 .Nav-Playlist,
 .Nav-Profile,
-.Nav-Search {
+.Nav-Search,
+.Nav-Logout {
   display: flex;
   justify-content: center;
   align-items: center;

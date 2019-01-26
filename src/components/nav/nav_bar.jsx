@@ -1,44 +1,69 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { func, bool } from 'prop-types';
+import * as SessionActions from '../../actions/session_actions';
 
 const activeStyle = {
   textDecoration: 'underline',
 };
 
-const NavBar = () => (
-  <>
-    <NavLink
-      to="/home"
-      className="Nav-Home"
-      activeStyle={activeStyle}
-    >
-      Home
-    </NavLink>
+class NavBar extends React.Component {
+  constructor() {
+    super();
 
-    <NavLink
-      to="/playlist"
-      className="Nav-Playlist"
-      activeStyle={activeStyle}
-    >
-      Playlist
-    </NavLink>
+    this.handleLogout = this.handleLogout.bind(this);
+  }
 
-    <NavLink
-      to="/profile"
-      className="Nav-Profile"
-      activeStyle={activeStyle}
-    >
-      Profile
-    </NavLink>
+  handleLogout() {
+    const { logout } = this.props;
+    logout();
+  }
 
-    <NavLink
-      to="/about"
-      className="Nav-About"
-      activeStyle={activeStyle}
-    >
-      About
-    </NavLink>
-  </>
-);
+  render() {
+    const { loggedOut } = this.props;
 
-export default NavBar;
+    return (
+      <>
+        <NavLink to="/home" className="Nav-Home" activeStyle={activeStyle}>
+          Home
+        </NavLink>
+
+        <NavLink to="/playlist" className="Nav-Playlist" activeStyle={activeStyle}>
+          Playlist
+        </NavLink>
+
+        <NavLink to="/profile" className="Nav-Profile" activeStyle={activeStyle}>
+          Profile
+        </NavLink>
+
+        <NavLink to="/about" className="Nav-About" activeStyle={activeStyle}>
+          About
+        </NavLink>
+
+        <button
+          className={`Nav-Logout ${loggedOut && 'Nav-Logout-loggedOut'}`}
+          type="button"
+          onClick={this.handleLogout}
+        >
+          Logout
+        </button>
+      </>
+    );
+  }
+}
+
+NavBar.propTypes = {
+  logout: func.isRequired,
+  loggedOut: bool.isRequired,
+};
+
+const mapStateToProps = ({ session }) => ({
+  loggedOut: !session.user.userId,
+});
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(SessionActions.logout()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

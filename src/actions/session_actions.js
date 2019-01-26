@@ -46,5 +46,8 @@ export const signup = user => dispatch => APIUtils.signup(user)
   .catch(err => dispatch(receiveSessionErrors(err.response.data)));
 
 export const logout = () => (dispatch) => {
+  sessionStorage.removeItem('CSRF-TOKEN');
+  sessionStorage.removeItem('username');
+  sessionStorage.removeItem('userId');
   dispatch(logoutUser());
 };
