@@ -1,13 +1,16 @@
 .Nav-Home,
 .Nav-Playlist,
 .Nav-About {
-  background-color: $light-pink;
+  // background-color: $light-pink;
+  // background-color: $pink;
+  background-color: $purple;
   border: 1px solid white;
 }
 
 .Nav-Profile,
 .Nav-Search {
-  background-color: $pink;
+  // background-color: $pink;
+  background-color: $purple;
   border-top: 2px solid white;
   border: 1px solid white;
 }

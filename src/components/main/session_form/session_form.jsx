@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { func, oneOf, string, arrayOf } from 'prop-types';
 
 class SessionForm extends React.Component {
@@ -39,44 +40,44 @@ class SessionForm extends React.Component {
     });
   }
 
-  renderErrors() {
-    const { errors } = this.props;
-
-    return (
-      <ul>
-        {errors.map(error => (
-          <li key={Date.now()}>{error}</li>
-        ))}
-      </ul>
-    );
-  }
-
   render() {
-    const { formType } = this.props;
+    const { formType, errors } = this.props;
     const { username, password } = this.state;
 
     return (
-      <div className="session-form-container">
-        <form className="session-form" onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={this.update('username')}
-          />
-          <br />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={this.update('password')}
-          />
-          <br />
-          <button type="submit">{formType}</button>
-        </form>
+      <form className="SessionForm" onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={this.update('username')}
+        />
+        <br />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={this.update('password')}
+        />
 
-        {this.renderErrors()}
-      </div>
+        <ul className="Errors">
+          {errors.map(error => (
+            <li key={Date.now()}>{error}</li>
+          ))}
+        </ul>
+
+        <button type="submit">{formType}</button>
+        <button type="submit">DEMO</button>
+
+
+        {formType === 'LOG IN'
+          ? (
+            <p>
+              {'Don\'t have an account? '}
+              <Link to="/profile/signup">Signup</Link>
+            </p>
+          ) : null}
+      </form>
     );
   }
 }
