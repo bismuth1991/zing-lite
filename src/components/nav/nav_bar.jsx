@@ -1,13 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { func, bool } from 'prop-types';
 import * as SessionActions from '../../actions/session_actions';
 
-const activeStyle = {
-  textDecoration: 'underline',
-};
 
 class NavBar extends React.Component {
   constructor() {
@@ -23,6 +20,10 @@ class NavBar extends React.Component {
 
   render() {
     const { loggedOut } = this.props;
+
+    const activeStyle = {
+      textDecoration: 'underline',
+    };
 
     return (
       <>
@@ -66,4 +67,4 @@ const mapStateToProps = ({ session }) => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(SessionActions.logout()),
 });
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));
