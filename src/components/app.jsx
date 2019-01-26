@@ -9,17 +9,15 @@ import NavBar from './nav/nav_bar';
 import SongIndexContainer from './song_index/song_index_container';
 import AudioPlayerContainer from './audio_player/audio_player_container';
 import PlaylistIndexContainer from './playlist_index/playlist_index_container';
-import SearchBar from './nav/search_bar';
 import LoginFormContainer from './main/session_form/login_form_container';
 import SignupFormContainer from './main/session_form/signup_form_container';
 
 const App = (props) => {
-  const { loggedIn } = props;
+  const { isLoggedIn } = props;
 
   return (
-    <div className={`Site ${loggedIn && 'Site-LoggedIn'}`}>
+    <div className={`Site ${isLoggedIn && 'Site-LoggedIn'}`}>
       <NavBar />
-      <SearchBar />
 
       <div className="Main">
         {/* <Route path="/home" component={SongIndexContainer} />
@@ -39,9 +37,9 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  loggedIn: bool.isRequired,
+  isLoggedIn: bool.isRequired,
 };
 
-const mapStateToProps = state => ({ loggedIn: Boolean(state.session.user.userId) });
+const mapStateToProps = ({ session }) => ({ isLoggedIn: Boolean(session.user.userId) });
 
 export default withRouter(connect(mapStateToProps, null)(App));
