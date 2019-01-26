@@ -4,14 +4,27 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import 'normalize.css';
-// import './css/index.scss';
 import './assets/css/index.scss';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
-  const store = configureStore();
+  let store;
+
+  if (sessionStorage.getItem('userId')) {
+    const preloadedState = {
+      session: {
+        user: {
+          userId: sessionStorage.getItem('userId'),
+          username: sessionStorage.getItem('username'),
+        },
+      },
+    };
+    store = configureStore(preloadedState);
+  } else {
+    store = configureStore();
+  }
 
   ReactDOM.render(
     <Root store={store} />,

@@ -24,12 +24,13 @@ export const clearSessionErrors = () => ({
 });
 
 const processServerRes = (res) => {
-  localStorage.setItem('CSRF-TOKEN', res.data.csrfToken);
+  const user = { userId: res.data.id, username: res.data.username };
 
-  return {
-    id: res.data.id,
-    username: res.data.username,
-  };
+  sessionStorage.setItem('CSRF-TOKEN', res.data.csrfToken);
+  sessionStorage.setItem('username', user.username);
+  sessionStorage.setItem('userId', user.userId);
+
+  return user;
 };
 
 export const login = user => dispatch => APIUtils.login(user)
