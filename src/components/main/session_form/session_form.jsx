@@ -76,7 +76,12 @@ class SessionForm extends React.Component {
               {'Don\'t have an account? '}
               <Link to="/profile/signup">Signup</Link>
             </p>
-          ) : null}
+          ) : (
+            <p>
+              {'Already have an account? '}
+              <Link to="/profile/login">Login</Link>
+            </p>
+          )}
       </form>
     );
   }
