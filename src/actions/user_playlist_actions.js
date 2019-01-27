@@ -1,4 +1,4 @@
-import * as userPlaylistApiUtil from '../util/user_playlist_utils';
+import * as userPlaylistApiUtil from '../utils/user_playlist_utils';
 
 export const RECEIVE_USER_PLAYLISTS = 'RECEIVE_USER_PLAYLISTS';
 export const RECEIVE_USER_PLAYLIST = 'RECEIVE_USER_PLAYLIST';
@@ -9,9 +9,9 @@ export const receiveUserPlaylists = userPlaylists => ({
   userPlaylists,
 });
 
-export const receiveUserPlaylist = playlist => ({
+export const receiveUserPlaylist = userPlaylist => ({
   type: RECEIVE_USER_PLAYLIST,
-  playlist,
+  userPlaylist,
 });
 
 export const removeUserPlaylist = playlistId => ({
