@@ -9,15 +9,14 @@ class UserPlaylistIndex extends React.Component {
   }
 
   render() {
-    const { user: { username, userId } } = this.props;
-    const { userPlaylists } = this.props;
+    const { user, userPlaylists } = this.props;
 
     if (userPlaylists.length === 0) return null;
 
     return (
       <div className="Profile">
         <h2 className="UserPlaylistHeader">
-          {`Hi, ${username}, below are your personal playlists`}
+          {`Hi, ${user.username}, below are your personal playlists`}
         </h2>
 
         <ul className="UserPlaylistIndex">
@@ -26,7 +25,7 @@ class UserPlaylistIndex extends React.Component {
               <UserPlaylistItem
                 playlistName={playlist.name}
                 playlistId={playlist.id}
-                userId={userId}
+                userId={user.userId}
               />
             </li>
           ))}
