@@ -9,31 +9,17 @@ class SongIndex extends React.Component {
 
     this.state = { offSet: 20 };
 
-    this.fetchMoreSongs = this.fetchMoreSongs.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
-  componentDidMount() {
-    const songIndex = document.getElementsByClassName('SongIndexContainer')[0];
-    songIndex.addEventListener('scroll', this.fetchMoreSongs);
-    // this.addEventListener('scroll', this.fetchMoreSongs);
-  }
-
-  componentWillUnmount() {
-    const songIndex = document.getElementsByClassName('SongIndexContainer')[0];
-    songIndex.removeEventListener('scroll', this.fetchMoreSongs);
-    // this.removeEventListener('scroll', this.fetchMoreSongs);
-  }
-
-  fetchMoreSongs() {
-    const { fetchSomeSongs } = this.props;
+  handleScroll(e) {
     const { offSet } = this.state;
-
     if (offSet > 35) return;
 
-    const songIndex = document.getElementsByClassName('SongIndexContainer')[0];
-    const { scrollTop, offsetHeight, scrollHeight } = songIndex;
+    const { fetchSomeSongs } = this.props;
+    const { scrollHeight, scrollTop, clientHeight } = e.target;
 
-    if (offsetHeight + scrollTop > scrollHeight - 1) {
+    if (scrollHeight - scrollTop <= clientHeight) {
       fetchSomeSongs(offSet);
       this.setState(state => ({
         offSet: state.offSet + 20,
@@ -45,10 +31,8 @@ class SongIndex extends React.Component {
     const { songs, forward, userClickPlay } = this.props;
 
     return (
-      // <ul className="Grid Grid--justifyCenter">
-      <ul className="SongIndexContainer">
+      <ul className="SongIndexContainer" onScroll={this.handleScroll}>
         {songs.map(song => (
-          // <li className="Grid-cell u-1of2" key={song.id}>
           <li className="SongIndexItem" key={song.id}>
             <SongIndexItem
               {...song}
