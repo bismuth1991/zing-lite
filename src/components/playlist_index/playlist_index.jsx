@@ -28,10 +28,7 @@ class PlaylistIndex extends React.Component {
   }
 
   render() {
-    const {
-      songs,
-      playingSongId,
-    } = this.props;
+    const { songs, playingSongId } = this.props;
 
     return (
       <ul className="PlaylistIndexContainer">

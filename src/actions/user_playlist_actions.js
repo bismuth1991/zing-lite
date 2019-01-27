@@ -19,18 +19,18 @@ export const removeUserPlaylist = playlistId => ({
   playlistId,
 });
 
-export const fetchUserPlaylists = () => dispatch => (
-  userPlaylistApiUtil.fetchUserPlaylists()
+export const fetchUserPlaylists = userId => dispatch => (
+  userPlaylistApiUtil.fetchUserPlaylists(userId)
     .then(userPlaylists => dispatch(receiveUserPlaylists(userPlaylists)))
 );
 
-export const createPlaylist = (userId, songIds, name) => dispatch => (
-  userPlaylistApiUtil.createPlaylist(userId, songIds, name)
+export const createPlaylist = playlistData => dispatch => (
+  userPlaylistApiUtil.createPlaylist(playlistData)
     .then(newPlaylist => dispatch(receiveUserPlaylist(newPlaylist)))
 );
 
-export const editPlaylist = (playlistId, userId, songIds, name) => dispatch => (
-  userPlaylistApiUtil.editPlaylist(playlistId, userId, songIds, name)
+export const editPlaylist = (playlistId, playlistData) => dispatch => (
+  userPlaylistApiUtil.editPlaylist(playlistId, playlistData)
     .then(newPlaylist => dispatch(receiveUserPlaylist(newPlaylist)))
 );
 
