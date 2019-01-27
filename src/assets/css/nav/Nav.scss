@@ -1,0 +1,35 @@
+.Nav-Home,
+.Nav-Playlist,
+.Nav-About,
+.Nav-Profile,
+.Nav-Search,
+.Nav-Logout {
+  background-color: $purple;
+  border: 1px solid white;
+}
+
+.Nav-Logout-loggedOut {
+  display: none;
+}
+
+.Nav-Search input {
+  width: 90%;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-size: 0.8em;
+}
+.Nav-Search input::placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+.Nav-Search input:focus {
+  border-bottom: 1px solid white;
+}
+.Nav-Search input:focus::placeholder {
+  color: transparent;
+}
+
+.Nav-Logout {
+  color: white;
+}

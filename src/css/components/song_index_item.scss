@@ -31,6 +31,7 @@
 
 .Main-content .Feature-image {
   filter: brightness(80%);
+  transition: 0.6s ease;
 }
 
 .Main-content .Feature > figure:hover {
@@ -38,6 +39,7 @@
     display: block;
   }
   .Feature-image {
+    transform: scale(1.2);
     filter: brightness(100%);
   }
 }

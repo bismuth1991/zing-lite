@@ -1,0 +1,57 @@
+.Controls1,
+.Controls2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0.2em;
+}
+
+.Controls1 { 
+  grid-area: Controls1; 
+}
+
+.Controls2 { 
+  grid-area: Controls2; 
+  justify-content: flex-end;
+}
+.Controls2 input {
+  width: 35%;
+}
+
+.Controls1 button, 
+.Controls2 button {
+  font-size: 1.6em;
+  color: $light-gray;
+}
+
+.Controls1 button:hover,
+.Controls2 button:hover {
+  color: white;
+}
+
+.Controls1 .active, 
+.Controls2 .active {
+  color: white;
+}
+
+.Controls1 button {
+  padding: 2.5px;
+}
+
+.Controls1 .fa-play-circle,
+.Controls1 .fa-pause-circle {
+  font-size: 1.6em;
+}
+
+.Controls2 .fa-random {
+  font-size: 0.95em;
+}
+
+.Controls2 .fa-redo-alt {
+  font-size: 0.85em;
+}
+
+.Controls2 .fa-volume-up {
+  font-size: 1.05em;
+}

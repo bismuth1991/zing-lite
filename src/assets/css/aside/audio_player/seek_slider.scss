@@ -1,0 +1,16 @@
+.SeekSlider { 
+  grid-area: SeekSlider; 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.SeekSlider input[type="range"] {
+  width: 50%;
+}
+
+.SeekSlider p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+

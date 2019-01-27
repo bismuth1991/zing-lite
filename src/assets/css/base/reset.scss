@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #1d1924;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 18px;
+  color: white;
+  text-rendering: optimizeLegibility;
+}
+
+body { 
+  height: 100vh; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+h4, h5, h6 {
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+}
+
+input {
+  background: none;
+  border: none;
+  outline: none;
+  caret-color: white;
+}
+

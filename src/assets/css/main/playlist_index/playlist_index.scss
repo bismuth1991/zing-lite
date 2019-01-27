@@ -1,0 +1,55 @@
+.PlaylistIndexContainer {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 90%;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.PlaylistIndexItem {
+  color: #b3b3b3;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #b3b3b3;
+}
+.PlaylistIndexItem:hover {
+  cursor: pointer;
+}
+
+.PlaylistIndexItem.playing {
+  color:white;
+}
+
+.PlaylistIndexItem:hover h4,
+.PlaylistIndexItem:hover h5 {
+  color: white;
+}
+
+.PlaylistIndexItem.playing h4 {
+  padding-left: 1.5em;
+}
+
+.PlaylistIndexItem > div {
+  display: flex;
+  position: relative;
+}
+
+.PlaylistIndexItem:hover .X {
+  display: block;
+  text-decoration: underline;
+}
+.PlaylistIndexItem .X {
+  display: none;
+  position: absolute;
+  padding-right: 0;
+  right: 0;
+  color: #b3b3b3;
+  // font-size: 0.8em;
+}
+.PlaylistIndexItem .X:hover {
+  color: white;
+}
