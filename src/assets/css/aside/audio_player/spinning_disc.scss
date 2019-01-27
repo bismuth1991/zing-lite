@@ -1,14 +1,13 @@
 .SpinningDisc {
   grid-area: SpinningDisc;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .SpinningDisc > img {
-  justify-self: center;
   object-fit: cover;
-  max-height: 75%;
+  max-height: 90%;
   border-radius: 50%;
   animation: spin infinite 20s linear;
 }
