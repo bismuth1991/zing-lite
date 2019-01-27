@@ -24,7 +24,7 @@ const PlaylistIndexItem = (props) => {
           onClick={handleRemoveSong(id)}
         >
           {/* <i className="fas fa-trash-alt" /> */}
-          <h5>remove</h5>
+          <h6>remove</h6>
         </button>
       </div>
 

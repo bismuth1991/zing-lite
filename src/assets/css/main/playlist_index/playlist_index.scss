@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   list-style: none;
+  width: 90%;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .PlaylistIndexItem {
@@ -15,6 +22,11 @@
 
 .PlaylistIndexItem.playing {
   color:white;
+}
+
+.PlaylistIndexItem:hover h4,
+.PlaylistIndexItem:hover h5 {
+  color: white;
 }
 
 .PlaylistIndexItem.playing h4 {
@@ -36,5 +48,8 @@
   padding-right: 0;
   right: 0;
   color: #b3b3b3;
-  font-size: 0.8em;
+  // font-size: 0.8em;
+}
+.PlaylistIndexItem .X:hover {
+  color: white;
 }

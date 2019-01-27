@@ -21,7 +21,7 @@ const App = (props) => {
 
       <div className="Main">
         <Route path="/home" component={SongIndexContainer} />
-        {/* <Route path="/playlist" component={PlaylistIndexContainer} /> */}
+        <Route path="/playlist" component={PlaylistIndexContainer} />
 
         <ProtectedRoute exact path="/profile" component={SignupFormContainer} />
         <AuthRoute path="/profile/login" component={LoginFormContainer} />
