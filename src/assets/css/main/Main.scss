@@ -4,4 +4,9 @@
   align-items: center;
   background-color: $purple;
   border-bottom: 2px solid white;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

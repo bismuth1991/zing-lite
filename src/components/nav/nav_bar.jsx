@@ -3,7 +3,6 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { func, bool } from 'prop-types';
 
-import { isLoggedOut } from '../../selectors/session_selectors';
 import * as SessionActions from '../../actions/session_actions';
 
 const activeStyle = {
@@ -23,7 +22,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { loggedOut } = this.props;
+    const { isLoggedIn } = this.props;
 
     return (
       <>
@@ -34,6 +33,7 @@ class NavBar extends React.Component {
         <NavLink to="/playlist" className="Nav-Playlist" activeStyle={activeStyle}>
           Playlist
         </NavLink>
+
         <NavLink to="/about" className="Nav-About" activeStyle={activeStyle}>
           About
         </NavLink>
@@ -47,7 +47,7 @@ class NavBar extends React.Component {
         </NavLink>
 
         <button
-          className={`Nav-Logout ${loggedOut && 'Nav-Logout-loggedOut'}`}
+          className={`Nav-Logout ${!isLoggedIn && 'Nav-Logout-loggedOut'}`}
           type="button"
           onClick={this.handleLogout}
         >
@@ -60,11 +60,11 @@ class NavBar extends React.Component {
 
 NavBar.propTypes = {
   logout: func.isRequired,
-  loggedOut: bool.isRequired,
+  isLoggedIn: bool.isRequired,
 };
 
-const mapStateToProps = state => ({
-  loggedOut: isLoggedOut(state),
+const mapStateToProps = ({ session }) => ({
+  isLoggedIn: Boolean(session.user.userId),
 });
 
 const mapDispatchToProps = dispatch => ({

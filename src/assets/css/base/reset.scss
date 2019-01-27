@@ -19,6 +19,17 @@ body {
   align-items: center; 
 }
 
+h4, h5, h6 {
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
 figure {
   margin: 0;
 }

@@ -13,13 +13,15 @@ class SongIndex extends React.Component {
   }
 
   componentDidMount() {
-    const songIndex = document.getElementById('song-index');
+    const songIndex = document.getElementsByClassName('SongIndexContainer')[0];
     songIndex.addEventListener('scroll', this.fetchMoreSongs);
+    // this.addEventListener('scroll', this.fetchMoreSongs);
   }
 
   componentWillUnmount() {
-    const songIndex = document.getElementById('song-index');
+    const songIndex = document.getElementsByClassName('SongIndexContainer')[0];
     songIndex.removeEventListener('scroll', this.fetchMoreSongs);
+    // this.removeEventListener('scroll', this.fetchMoreSongs);
   }
 
   fetchMoreSongs() {
@@ -28,7 +30,7 @@ class SongIndex extends React.Component {
 
     if (offSet > 35) return;
 
-    const songIndex = document.getElementById('song-index');
+    const songIndex = document.getElementsByClassName('SongIndexContainer')[0];
     const { scrollTop, offsetHeight, scrollHeight } = songIndex;
 
     if (offsetHeight + scrollTop > scrollHeight - 1) {
@@ -43,9 +45,11 @@ class SongIndex extends React.Component {
     const { songs, forward, userClickPlay } = this.props;
 
     return (
-      <ul className="Grid Grid--justifyCenter">
+      // <ul className="Grid Grid--justifyCenter">
+      <ul className="SongIndexContainer">
         {songs.map(song => (
-          <li className="Grid-cell u-1of2" key={song.id}>
+          // <li className="Grid-cell u-1of2" key={song.id}>
+          <li className="SongIndexItem" key={song.id}>
             <SongIndexItem
               {...song}
               userClickPlay={userClickPlay}
