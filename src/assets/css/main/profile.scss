@@ -1,0 +1,31 @@
+.Profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1fr;
+  grid-template-areas: 
+    "UserPlaylistHeader"
+    "UserPlaylistItems";
+  width: 90%;
+}
+
+.ProfileHeader,
+.ProfileItems {
+  display: flex;
+  width: 100%;
+}
+
+.UserPlaylistHeader {
+  grid-area: UserPlaylistHeader;
+}
+
+.UserPlaylistContainer {
+  grid-area: UserPlaylistItems;
+  flex-direction: column;
+  list-style: none;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
