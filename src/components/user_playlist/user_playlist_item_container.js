@@ -6,7 +6,7 @@ import { startPlaylist } from '../../actions/audio_player_actions';
 import UserPlaylistItem from './user_playlist_index';
 
 const mapDispatchToProps = dispatch => ({
-  addSongsToList: songIds => dispatch(startPlaylist(songIds)),
+  play: songIds => dispatch(startPlaylist(songIds)),
   deleteUserPlaylist: playlistId => dispatch(deleteUserPlaylist(playlistId)),
 });
 

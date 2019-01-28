@@ -25,6 +25,7 @@ class UserPlaylistIndex extends React.Component {
               <UserPlaylistItem
                 playlistName={playlist.name}
                 playlistId={playlist.id}
+                songIds={playlist.songIds}
                 userId={user.userId}
               />
             </li>
@@ -36,11 +37,11 @@ class UserPlaylistIndex extends React.Component {
 }
 
 UserPlaylistIndex.propTypes = {
-  userPlaylists: shape({
+  userPlaylists: arrayOf(shape({
     id: number,
     name: string,
     songIds: arrayOf(number),
-  }).isRequired,
+  })).isRequired,
   user: shape({
     username: string,
     userId: number,

@@ -26,13 +26,13 @@
   color: $light-gray;
 }
 
-.Buttons { 
+.PlaylistForm .Buttons { 
   grid-area: Buttons; 
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
-.Buttons button {
+.PlaylistForm .Buttons button {
   background-color: $pink;
   color: white;
   padding: 0 0.2em;
@@ -40,6 +40,6 @@
   border-radius: 10px;;
   height: 80%;
 }
-.Buttons button:hover {
+.PlaylistForm .Buttons button:hover {
   background-color: $light-pink;
 }
