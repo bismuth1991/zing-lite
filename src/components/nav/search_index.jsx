@@ -2,6 +2,7 @@ import React from 'react';
 import { shape, arrayOf, number, string, func } from 'prop-types';
 
 import SearchIndexItem from './search_index_item';
+import SearchBarContainer from './search_bar_container';
 
 class SearchIndex extends React.Component {
   constructor() {
@@ -21,20 +22,24 @@ class SearchIndex extends React.Component {
     const { songs } = this.props;
 
     return (
-      <ul className="Col-List">
-        {songs.map(song => (
-          <li
-            className="Col-List__Item"
-            key={song.id}
-            role="presentation"
-            onClick={this.handleChangeSong(song.id)}
-          >
-            <SearchIndexItem
-              {...song}
-            />
-          </li>
-        ))}
-      </ul>
+      <>
+        <SearchBarContainer />
+
+        <ul className="Col-List">
+          {songs.map(song => (
+            <li
+              className="Col-List__Item"
+              key={song.id}
+              role="presentation"
+              onClick={this.handleChangeSong(song.id)}
+            >
+              <SearchIndexItem
+                {...song}
+              />
+            </li>
+          ))}
+        </ul>
+      </>
     );
   }
 }
