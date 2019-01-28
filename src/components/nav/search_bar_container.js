@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import SearchBar from './search_bar';
-import { fetchQueryData } from '../../actions/search_bar_actions';
-import { receiveQueryData } from '../../actions/song_actions';
+import { fetchQueryData, receiveQueryData } from '../../actions/search_bar_actions';
 import { getSongInfo } from '../../selectors/song_selectors';
 
 const mapStateToProps = ({ entities: { songs, artists, albums, searchBar } }) => ({
@@ -12,7 +11,7 @@ const mapStateToProps = ({ entities: { songs, artists, albums, searchBar } }) =>
 
 const mapDispatchToProps = dispatch => ({
   fetchQueryData: query => dispatch(fetchQueryData(query)),
-  receiveQueryData: payload => dispatch(receiveQuerydata(payload)),
+  receiveQueryData: payload => dispatch(receiveQueryData(payload)),
 });
 
 const SearchBarContainer = connect(

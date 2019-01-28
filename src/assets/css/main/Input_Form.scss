@@ -1,0 +1,45 @@
+.Input-Form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "Input"
+    "Buttons";
+
+  width: 90%;
+  height: 17%;
+  border: 1.5px solid $pink;
+  border-radius: 4px;
+  border-bottom-right-radius: 10px;
+}
+.Input-Form:hover {
+  border-color: $light-pink;
+}
+
+.Input-Form__Input { 
+  grid-area: Input; 
+  color: white;
+  font-weight: 600;
+  padding: 0.2em;
+}
+.Input-Form__Input::placeholder {
+  color: $light-gray;
+}
+
+.Input-Form__Buttons { 
+  grid-area: Buttons; 
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.Input-Form__Buttons button {
+  background-color: $pink;
+  color: white;
+  padding: 0 0.2em;
+  border-radius: 2px;
+  border-radius: 10px;;
+  height: 80%;
+}
+.Input-Form__Buttons button:hover {
+  background-color: $light-pink;
+}
