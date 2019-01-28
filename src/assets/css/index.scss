@@ -1,5 +1,5 @@
-@import './base/reset.scss';
 @import './base/variables.scss';
+@import './base/reset.scss';
 @import './base/grid_layout.scss';
 
 @import './nav/Nav.scss';
@@ -10,6 +10,7 @@
 @import './main/playlist_index/playlist_index.scss';
 @import './main/playlist_index/sound_wave.scss';
 @import './main/playlist_form.scss';
+@import './main/profile.scss';
 
 @import './aside/Aside.scss';
 @import './aside/audio_player/audio_player_container.scss';

@@ -1,31 +1,9 @@
-.Profile {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.2fr 1fr;
-  grid-template-areas: 
-    "UserPlaylistHeader"
-    "UserPlaylistIndex";
-  width: 90%;
-}
-
-.UserPlaylistHeader,
-.UserPlaylistIndex {
-  display: flex;
-  width: 100%;
-}
-
 .UserPlaylistHeader {
-  grid-area: UserPlaylistHeader;
+  margin-block-start: 0;
+  margin: 0 0.5em 1em 0.5em;
 }
 
-.UserPlaylistIndex {
-  grid-area: UserPlaylistItems;
-  flex-direction: column;
-  list-style: none;
-  height: 100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
+
+
+
+

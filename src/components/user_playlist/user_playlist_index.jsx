@@ -3,35 +3,43 @@ import { shape, string, number, arrayOf, func } from 'prop-types';
 import UserPlaylistItem from './user_playlist_item';
 
 class UserPlaylistIndex extends React.Component {
+  constructor() {
+    super();
+
+    this.handlePlay = this.handlePlay.bind(this);
+  }
+
   componentDidMount() {
-    const { fetchUserPlaylists } = this.props;
-    fetchUserPlaylists();
+    const { fetchUserPlaylists, user } = this.props;
+    fetchUserPlaylists(user.userId);
+  }
+
+  handlePlay(songIds) {
+    const { play } = this.props;
+    return () => play(songIds);
   }
 
   render() {
     const { user, userPlaylists } = this.props;
 
-    if (userPlaylists.length === 0) return null;
-
     return (
-      <div className="Profile">
-        <h2 className="UserPlaylistHeader">
-          {`Hi, ${user.username}, below are your personal playlists`}
-        </h2>
+      <>
+        <h4 className="UserPlaylistHeader">
+          <span>{`Hi, ${user.username}! Below are your personal playlists`}</span>
+        </h4>
 
-        <ul className="UserPlaylistIndex">
+        <ul className="SongIndexContainer">
           {userPlaylists.map(playlist => (
-            <li className="UserPlaylistItem" key={playlist.id}>
+            <li className="SongIndexItem" key={playlist.id}>
               <UserPlaylistItem
-                playlistName={playlist.name}
-                playlistId={playlist.id}
-                songIds={playlist.songIds}
+                {...playlist}
                 userId={user.userId}
+                handlePlay={this.handlePlay}
               />
             </li>
           ))}
         </ul>
-      </div>
+      </>
     );
   }
 }
@@ -44,9 +52,10 @@ UserPlaylistIndex.propTypes = {
   })).isRequired,
   user: shape({
     username: string,
-    userId: number,
+    userId: string,
   }).isRequired,
   fetchUserPlaylists: func.isRequired,
+  play: func.isRequired,
 };
 
 export default UserPlaylistIndex;

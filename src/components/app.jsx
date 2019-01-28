@@ -11,6 +11,7 @@ import AudioPlayerContainer from './audio_player/audio_player_container';
 import PlaylistIndexContainer from './playlist_index/playlist_index_container';
 import LoginFormContainer from './main/session_form/login_form_container';
 import SignupFormContainer from './main/session_form/signup_form_container';
+import UserPlaylistContainer from './user_playlist/user_playlist_index_container';
 
 const App = (props) => {
   const { isLoggedIn } = props;
@@ -23,7 +24,7 @@ const App = (props) => {
         <Route path="/home" component={SongIndexContainer} />
         <Route path="/playlist" component={PlaylistIndexContainer} />
 
-        <ProtectedRoute exact path="/profile" component={SignupFormContainer} />
+        <ProtectedRoute exact path="/profile" component={UserPlaylistContainer} />
         <AuthRoute path="/profile/login" component={LoginFormContainer} />
         <AuthRoute path="/profile/signup" component={SignupFormContainer} />
       </div>

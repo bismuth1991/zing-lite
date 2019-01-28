@@ -1,4 +1,5 @@
 import { RECEIVE_SONGS } from '../actions/song_actions';
+import { RECEIVE_USER_PLAYLISTS } from '../actions/user_playlist_actions';
 
 const initialState = {
   7: {
@@ -11,6 +12,11 @@ const initialState = {
 const artistsReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_SONGS:
+      return {
+        ...state,
+        ...action.payload.data.artists,
+      };
+    case RECEIVE_USER_PLAYLISTS:
       return {
         ...state,
         ...action.payload.data.artists,

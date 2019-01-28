@@ -19,7 +19,7 @@ class SongIndex extends React.Component {
     const { fetchSomeSongs } = this.props;
     const { scrollHeight, scrollTop, clientHeight } = e.target;
 
-    if (scrollHeight - scrollTop <= clientHeight) {
+    if (scrollHeight - scrollTop <= clientHeight + 1) {
       fetchSomeSongs(offSet);
       this.setState(state => ({
         offSet: state.offSet + 20,
