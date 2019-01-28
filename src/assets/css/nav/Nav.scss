@@ -6,6 +6,10 @@
 .Nav-Logout {
   background-color: $purple;
   border: 1px solid white;
+
+  &:hover {
+    background-color: $pink;
+  }
 }
 
 .Nav-Logout-loggedOut {

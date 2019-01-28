@@ -1,33 +1,3 @@
-// .PlaylistForm {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   width: 90%;
-//   border: 1px solid $pink;
-//   // height: 200px;
-//   margin: 0.5em 0;
-//   border-radius: 4px;
-// }
-
-// .PlaylistForm input {
-//   color: white;
-//   margin-top: 0;
-// }
-// .PlaylistForm input::placeholder {
-//   color: $light-gray;
-// }
-
-// .PlaylistForm div {
-//   align-self: flex-end;
-// }
-// .PlaylistForm button {
-//   background-color: $pink;
-//   color: white;
-//   font-size: 0.8em;
-//   // padding-bottom: 1em;
-//   border-radius: 3px;
-// }
-
 .PlaylistForm {
   display: grid;
   grid-template-columns: 1fr;
@@ -41,6 +11,9 @@
   border: 1.5px solid $pink;
   border-radius: 4px;
   border-bottom-right-radius: 10px;
+}
+.PlaylistForm:hover {
+  border-color: $light-pink;
 }
 
 .PlaylistName { 
@@ -66,4 +39,7 @@
   border-radius: 2px;
   border-radius: 10px;;
   height: 80%;
+}
+.Buttons button:hover {
+  background-color: $light-pink;
 }

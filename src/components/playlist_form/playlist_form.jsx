@@ -65,7 +65,7 @@ class PlaylistForm extends React.Component {
           {!playlistName
             ? (
               <button type="button" onClick={this.handleSave}>
-                <h6>Save</h6>
+                <h6>Save/Edit</h6>
               </button>
             ) : null}
 
@@ -85,7 +85,7 @@ PlaylistForm.defaultProps = {
 };
 
 PlaylistForm.propTypes = {
-  userId: number,
+  userId: string,
   songIds: arrayOf(number).isRequired,
   playlistId: number,
   playlistName: string,
