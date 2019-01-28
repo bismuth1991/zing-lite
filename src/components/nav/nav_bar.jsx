@@ -7,6 +7,7 @@ import * as SessionActions from '../../actions/session_actions';
 
 const activeStyle = {
   textDecoration: 'underline',
+  backgroundColor: 'rgba(192, 108, 132, 1)',
 };
 
 class NavBar extends React.Component {
@@ -19,6 +20,7 @@ class NavBar extends React.Component {
   handleLogout() {
     const { logout } = this.props;
     logout();
+    window.location.hash = '/home';
   }
 
   render() {
@@ -30,7 +32,7 @@ class NavBar extends React.Component {
           Home
         </NavLink>
 
-        <NavLink to="/playlist" className="Nav-Playlist" activeStyle={activeStyle}>
+        <NavLink to="/playlist/" className="Nav-Playlist" activeStyle={activeStyle}>
           Playlist
         </NavLink>
 

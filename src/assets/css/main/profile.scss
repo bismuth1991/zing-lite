@@ -3,6 +3,23 @@
   margin: 0 0.5em 1em 0.5em;
 }
 
+.UserPlaylistIndex {
+  * {
+    color: $light-gray;
+  }
+  i {
+    font-size: 200% !important;
+    color: $pink;
+  }
+  i:hover {
+    color: $light-pink;
+    transition: 0.5s ease;
+  }
+}
+
+.UserPlaylistIndex img {
+  border: 4px solid $pink;
+}
 
 
 

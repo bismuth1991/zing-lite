@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const preloadedState = {
       session: {
         user: {
-          userId: sessionStorage.getItem('userId'),
+          userId: parseInt(sessionStorage.getItem('userId'), 10),
           username: sessionStorage.getItem('username'),
         },
       },

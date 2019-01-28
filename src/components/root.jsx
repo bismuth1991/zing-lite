@@ -4,11 +4,14 @@ import { HashRouter } from 'react-router-dom';
 import { instanceOf } from 'prop-types';
 
 import App from './app';
+import ErrorHandler from './error_handler';
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <HashRouter>
-      <App />
+      <ErrorHandler>
+        <App />
+      </ErrorHandler>
     </HashRouter>
   </Provider>
 );

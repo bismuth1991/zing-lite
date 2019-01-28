@@ -18,9 +18,10 @@ export const shuffle = () => ({
   type: SHUFFLE,
 });
 
-export const startPlaylist = songIds => ({
+export const startPlaylist = (songIds, playlistId) => ({
   type: START_PLAYLIST,
   songIds,
+  playlistId,
 });
 
 export const userClickPlay = songId => ({

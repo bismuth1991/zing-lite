@@ -9,14 +9,12 @@ class UserPlaylistIndex extends React.Component {
     this.handlePlay = this.handlePlay.bind(this);
   }
 
-  componentDidMount() {
-    const { fetchUserPlaylists, user } = this.props;
-    fetchUserPlaylists(user.userId);
-  }
-
-  handlePlay(songIds) {
+  handlePlay(songIds, playlistId) {
     const { play } = this.props;
-    return () => play(songIds);
+    return () => {
+      play(songIds, playlistId);
+      window.location.hash = '/playlist';
+    };
   }
 
   render() {
@@ -28,7 +26,7 @@ class UserPlaylistIndex extends React.Component {
           <span>{`Hi, ${user.username}! Below are your personal playlists`}</span>
         </h4>
 
-        <ul className="SongIndexContainer">
+        <ul className="SongIndexContainer UserPlaylistIndex">
           {userPlaylists.map(playlist => (
             <li className="SongIndexItem" key={playlist.id}>
               <UserPlaylistItem
@@ -52,9 +50,8 @@ UserPlaylistIndex.propTypes = {
   })).isRequired,
   user: shape({
     username: string,
-    userId: string,
+    userId: number,
   }).isRequired,
-  fetchUserPlaylists: func.isRequired,
   play: func.isRequired,
 };
 

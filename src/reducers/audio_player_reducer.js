@@ -5,6 +5,7 @@ import {
   USER_CLICK_PLAY,
   CHANGE_SONG,
   REMOVE_SONG,
+  START_PLAYLIST,
 } from '../actions/audio_player_actions';
 
 import {
@@ -13,6 +14,7 @@ import {
   shuffleLogic,
   removeSongLogic,
 } from '../utils/audio_player_utils';
+import { RECEIVE_USER_LOGOUT } from '../actions/session_actions';
 
 
 const initialState = {
@@ -20,6 +22,7 @@ const initialState = {
   songIds: [2],
   prevSongIndex: 0,
   playedSongIndices: [],
+  currentPlaylist: 0,
 };
 
 const audioPlayerReducer = (state = initialState, action) => {
@@ -62,6 +65,16 @@ const audioPlayerReducer = (state = initialState, action) => {
     case REMOVE_SONG: {
       const newState = removeSongLogic(state, action);
       return newState;
+    }
+    case START_PLAYLIST: {
+      return {
+        ...initialState,
+        songIds: action.songIds,
+        currentPlaylist: action.playlistId,
+      };
+    }
+    case RECEIVE_USER_LOGOUT: {
+      return initialState;
     }
     default:
       return state;

@@ -5,8 +5,8 @@ import PlaylistIndexItem from './playlist_index_item';
 import PlaylistFormContainer from '../playlist_form/playlist_form_container';
 
 class PlaylistIndex extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.handleChangeSong = this.handleChangeSong.bind(this);
     this.handleRemoveSong = this.handleRemoveSong.bind(this);

@@ -2,11 +2,11 @@ import React from 'react';
 import { string, number, arrayOf, func } from 'prop-types';
 
 class PlaylistForm extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      newName: '',
+      newName: `${props.playlistName || ''}`,
     };
 
     this.handleNew = this.handleNew.bind(this);
@@ -48,8 +48,10 @@ class PlaylistForm extends React.Component {
   }
 
   render() {
-    const { playlistName } = this.props;
+    const { playlistName, userId } = this.props;
     const { newName } = this.state;
+
+    if (!userId) return null;
 
     return (
       <form className="PlaylistForm" onSubmit={e => e.preventDefault()}>
@@ -57,12 +59,12 @@ class PlaylistForm extends React.Component {
           className="PlaylistName"
           type="text"
           placeholder="Name this playlist..."
-          value={playlistName || newName}
+          value={newName}
           onChange={this.handleChange}
         />
 
         <div className="Buttons">
-          {!playlistName
+          {playlistName
             ? (
               <button type="button" onClick={this.handleSave}>
                 <h6>Save/Edit</h6>
@@ -85,7 +87,7 @@ PlaylistForm.defaultProps = {
 };
 
 PlaylistForm.propTypes = {
-  userId: string,
+  userId: number,
   songIds: arrayOf(number).isRequired,
   playlistId: number,
   playlistName: string,
