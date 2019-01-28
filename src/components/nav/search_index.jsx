@@ -12,8 +12,7 @@ class SearchIndex extends React.Component {
 
   handleChangeSong(id) {
     const { changeSong } = this.props;
-    return (e) => {
-      e.stopPropagation();
+    return () => {
       changeSong(id);
     };
   }
