@@ -4,14 +4,14 @@ export const RECEIVE_USER_PLAYLISTS = 'RECEIVE_USER_PLAYLISTS';
 export const RECEIVE_USER_PLAYLIST = 'RECEIVE_USER_PLAYLIST';
 export const REMOVE_USER_PLAYLIST = 'REMOVE_USER_PLAYLIST';
 
-export const receiveUserPlaylists = userPlaylists => ({
+export const receiveUserPlaylists = payload => ({
   type: RECEIVE_USER_PLAYLISTS,
-  userPlaylists,
+  payload,
 });
 
-export const receiveUserPlaylist = userPlaylist => ({
+export const receiveUserPlaylist = payload => ({
   type: RECEIVE_USER_PLAYLIST,
-  userPlaylist,
+  payload,
 });
 
 export const removeUserPlaylist = playlistId => ({
@@ -21,17 +21,17 @@ export const removeUserPlaylist = playlistId => ({
 
 export const fetchUserPlaylists = userId => dispatch => (
   userPlaylistApiUtil.fetchUserPlaylists(userId)
-    .then(userPlaylists => dispatch(receiveUserPlaylists(userPlaylists)))
+    .then(payload => dispatch(receiveUserPlaylists(payload)))
 );
 
 export const createPlaylist = playlistData => dispatch => (
   userPlaylistApiUtil.createPlaylist(playlistData)
-    .then(newPlaylist => dispatch(receiveUserPlaylist(newPlaylist)))
+    .then(payload => dispatch(receiveUserPlaylist(payload)))
 );
 
 export const editPlaylist = (playlistId, playlistData) => dispatch => (
   userPlaylistApiUtil.editPlaylist(playlistId, playlistData)
-    .then(newPlaylist => dispatch(receiveUserPlaylist(newPlaylist)))
+    .then(payload => dispatch(receiveUserPlaylist(payload)))
 );
 
 export const deleteUserPlaylist = playlistId => dispatch => (

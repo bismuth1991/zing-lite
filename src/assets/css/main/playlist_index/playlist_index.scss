@@ -12,9 +12,9 @@
 }
 
 .PlaylistIndexItem {
-  color: #b3b3b3;
+  color: $light-gray;
   margin-bottom: 1em;
-  border-bottom: 1px solid #b3b3b3;
+  border-bottom: 1px solid $light-gray;
 }
 .PlaylistIndexItem:hover {
   cursor: pointer;
@@ -47,8 +47,7 @@
   position: absolute;
   padding-right: 0;
   right: 0;
-  color: #b3b3b3;
-  // font-size: 0.8em;
+  color: $light-gray;
 }
 .PlaylistIndexItem .X:hover {
   color: white;

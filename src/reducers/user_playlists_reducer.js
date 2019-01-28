@@ -9,12 +9,12 @@ const userPlaylistsReducer = (state = {}, action) => {
     case RECEIVE_USER_PLAYLISTS:
       return {
         ...state,
-        ...action.userPlaylists,
+        ...action.payload.data.userPlaylists,
       };
     case RECEIVE_USER_PLAYLIST:
       return {
         ...state,
-        ...action.userPlaylist,
+        ...action.payload.data,
       };
     case REMOVE_USER_PLAYLIST: {
       const newState = { ...state };

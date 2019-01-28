@@ -2,6 +2,7 @@ import React from 'react';
 import { shape, arrayOf, number, string, func } from 'prop-types';
 
 import PlaylistIndexItem from './playlist_index_item';
+import PlaylistFormContainer from '../playlist_form/playlist_form_container';
 
 class PlaylistIndex extends React.Component {
   constructor() {
@@ -31,25 +32,30 @@ class PlaylistIndex extends React.Component {
     const { songs, playingSongId } = this.props;
 
     return (
-      <ul className="PlaylistIndexContainer">
-        {songs.map(song => (
-          <li
-            className={`
+      <>
+        <PlaylistFormContainer songIds={songs.map(song => song.id)} />
+
+        <ul className="PlaylistIndexContainer">
+
+          {songs.map(song => (
+            <li
+              className={`
               PlaylistIndexItem 
               ${song.id === playingSongId ? 'playing' : ''}
             `}
-            key={song.id}
-            role="presentation"
-            onClick={this.handleChangeSong(song.id)}
-          >
-            <PlaylistIndexItem
-              {...song}
-              isPlaying={song.id === playingSongId}
-              handleRemoveSong={this.handleRemoveSong}
-            />
-          </li>
-        ))}
-      </ul>
+              key={song.id}
+              role="presentation"
+              onClick={this.handleChangeSong(song.id)}
+            >
+              <PlaylistIndexItem
+                {...song}
+                isPlaying={song.id === playingSongId}
+                handleRemoveSong={this.handleRemoveSong}
+              />
+            </li>
+          ))}
+        </ul>
+      </>
     );
   }
 }
