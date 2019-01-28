@@ -12,7 +12,7 @@ import PlaylistIndexContainer from './playlist_index/playlist_index_container';
 import LoginFormContainer from './main/session_form/login_form_container';
 import SignupFormContainer from './main/session_form/signup_form_container';
 import UserPlaylistContainer from './user_playlist/user_playlist_index_container';
-import SearchBarContainer from './nav/search_bar_container';
+import SearchIndexContainer from './nav/search_index_container';
 
 const App = (props) => {
   const { isLoggedIn } = props;
@@ -27,7 +27,7 @@ const App = (props) => {
         <Route exact path="/playlist" component={PlaylistIndexContainer} />
         <ProtectedRoute exact path="/playlist/:playlistId" component={PlaylistIndexContainer} />
 
-        <Route path="/search" component={SearchBarContainer} />
+        <Route path="/search" component={SearchIndexContainer} />
 
         <ProtectedRoute exact path="/profile" component={UserPlaylistContainer} />
 
