@@ -3,13 +3,12 @@ import { Redirect } from 'react-router-dom';
 import { element } from 'prop-types';
 
 class ErrorHandler extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { hasError: false };
   }
 
   componentDidCatch() {
-    // Display fallback UI
     this.setState({ hasError: true });
   }
 
