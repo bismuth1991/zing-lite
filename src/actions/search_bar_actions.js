@@ -1,4 +1,4 @@
-import fetchDataByQuery from '../utils/search_bar_utils';
+import { fetchDataByQuery } from '../utils/search_bar_utils';
 
 export const RECEIVE_QUERY_DATA = 'RECEIVE_QUERY_DATA';
 
