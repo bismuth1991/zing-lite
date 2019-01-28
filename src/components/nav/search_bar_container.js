@@ -3,8 +3,8 @@ import SearchBar from './search_bar';
 import { fetchQueryData, receiveQueryData } from '../../actions/search_bar_actions';
 import { getSongInfo } from '../../selectors/song_selectors';
 
-const mapStateToProps = ({ entities: { songs, artists, albums, searchBar } }) => ({
-  songsInfo: searchBar.songIds.map(
+const mapStateToProps = ({ entities: { songs, artists, albums, searchResults } }) => ({
+  songsInfo: searchResults.songIds.map(
     songId => getSongInfo(songs[songId], artists, albums),
   ),
 });

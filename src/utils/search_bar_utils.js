@@ -6,8 +6,7 @@ export const nothing = () => (
 
 export const fetchDataByQuery = query => (
   axios.request({
-    url: 'https://zing-lite-rails-api.herokuapp.com/api/searches',
+    url: `https://zing-lite-rails-api.herokuapp.com/api/searches/?query=${query}`,
     method: 'get',
-    data: { query },
   })
 );

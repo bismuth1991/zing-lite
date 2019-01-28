@@ -1,0 +1,25 @@
+.Col-List {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 90%;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.Col-List__Item {
+  color: $light-gray;
+  margin-bottom: 1em;
+  border-bottom: 1px solid $light-gray;
+}
+.Col-List__Item:hover {
+  cursor: pointer;
+  h4, h5 {
+    color: white;
+  }
+}
+
