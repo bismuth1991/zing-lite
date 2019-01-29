@@ -31,9 +31,9 @@ class SongIndex extends React.Component {
     const { songs, forward, userClickPlay } = this.props;
 
     return (
-      <ul className="SongIndexContainer" onScroll={this.handleScroll}>
+      <ul className="Row-List" onScroll={this.handleScroll}>
         {songs.map(song => (
-          <li className="SongIndexItem" key={song.id}>
+          <li className="Row-List__Item" key={song.id}>
             <SongIndexItem
               {...song}
               userClickPlay={userClickPlay}

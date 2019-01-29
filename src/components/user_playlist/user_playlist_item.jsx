@@ -5,7 +5,7 @@ const UserPlaylistItem = (props) => {
   const { name, coverImageUrl, handlePlay, songIds, id } = props;
 
   return (
-    <div>
+    <div className="image-wrapper">
       <figure>
         <img
           className="profile__playlist__image"

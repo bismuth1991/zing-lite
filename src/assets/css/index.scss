@@ -1,21 +1,21 @@
-@import './base/variables.scss';
-@import './base/reset.scss';
-@import './base/grid_layout.scss';
+@import './base/Variables.scss';
+@import './base/Reset.scss';
+@import './base/Grid_Layout.scss';
+@import './base/Nav.scss';
+@import './base/Aside.scss';
+@import './base/Main.scss';
 
-@import './nav/Nav.scss';
-
-@import './main/Main.scss';
-@import './main/Input_Form.scss';
 @import './main/Col_List.scss';
-@import './main/session_form.scss';
-@import './main/song_index.scss';
-@import './main/playlist_index.scss';
-@import './main/profile.scss';
+@import './main/Row-List.scss';
+@import './main/Input_Form.scss';
 
-@import './aside/Aside.scss';
-@import './aside/audio_player/audio_player_container.scss';
-@import './aside/audio_player/spinning_disc.scss';
-@import './aside/audio_player/marquee.scss';
-@import './aside/audio_player/controls.scss';
-@import './aside/audio_player/slider.scss';
-@import './aside/audio_player/seek_slider.scss';
+@import './components/session_form.scss';
+@import './components/playlist_index.scss';
+@import './components/profile.scss';
+
+@import './components/audio_player/audio_player_container.scss';
+@import './components/audio_player/spinning_disc.scss';
+@import './components/audio_player/marquee.scss';
+@import './components/audio_player/controls.scss';
+@import './components/audio_player/slider.scss';
+@import './components/audio_player/seek_slider.scss';

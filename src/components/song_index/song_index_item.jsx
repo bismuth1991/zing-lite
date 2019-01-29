@@ -18,7 +18,7 @@ class SongIndexItem extends React.Component {
     const { title, artist, coverImage } = this.props;
 
     return (
-      <div>
+      <div className="image-wrapper">
         <figure>
           <img
             src={coverImage}
@@ -31,7 +31,7 @@ class SongIndexItem extends React.Component {
         </figure>
 
         <h5>{title}</h5>
-        <h5 className="artist">{artist}</h5>
+        <h5 className="image-wrapper__artist">{artist}</h5>
       </div>
     );
   }
