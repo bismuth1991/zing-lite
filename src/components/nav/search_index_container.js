@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 
 import { getSongInfo } from '../../selectors/song_selectors';
-import { changeSong } from '../../actions/audio_player_actions';
 
 import SearchIndex from './search_index';
+import { forward, userClickPlay } from '../../actions/audio_player_actions';
 
 const mapStateToProps = ({ entities: { songs, artists, albums, searchResults } }) => ({
   songs: searchResults.songIds.map(
@@ -12,7 +12,8 @@ const mapStateToProps = ({ entities: { songs, artists, albums, searchResults } }
 });
 
 const mapDispatchToProps = dispatch => ({
-  changeSong: songId => dispatch(changeSong(songId)),
+  forward: () => dispatch(forward()),
+  userClickPlay: songId => dispatch(userClickPlay(songId)),
 });
 
 const SearchIndexContainer = connect(

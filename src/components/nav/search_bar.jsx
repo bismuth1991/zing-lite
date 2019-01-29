@@ -1,17 +1,20 @@
 import React from 'react';
 import { func } from 'prop-types';
+import { debounce } from 'debounce';
 
 class SearchBar extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = { query: '' };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.debounceSearch = debounce(query => props.fetchQueryData(query), 500);
   }
 
   handleSubmit() {
+    this.debounceSearch.flush();
     this.setState({ query: '' });
   }
 
@@ -20,11 +23,14 @@ class SearchBar extends React.Component {
       query: e.target.value,
     });
 
-    const { fetchQueryData } = this.props;
+    const { clearSearchResults } = this.props;
     const query = e.target.value;
 
     if (query && query !== '') {
-      fetchQueryData(query);
+      this.debounceSearch(query);
+    } else {
+      this.debounceSearch.clear();
+      clearSearchResults();
     }
   }
 
@@ -32,7 +38,7 @@ class SearchBar extends React.Component {
     const { query } = this.state;
 
     return (
-      <form className="Input-Form" onSubmit={e => e.preventDefault()}>
+      <form className="Input-Form" onSubmit={this.handleSubmit}>
         <input
           className="Input-Form__Input"
           type="text"
@@ -53,6 +59,7 @@ class SearchBar extends React.Component {
 
 SearchBar.propTypes = {
   fetchQueryData: func.isRequired,
+  clearSearchResults: func.isRequired,
 };
 
 export default SearchBar;

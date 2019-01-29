@@ -8,13 +8,14 @@ class SearchIndex extends React.Component {
   constructor() {
     super();
 
-    this.handleChangeSong = this.handleChangeSong.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
   }
 
-  handleChangeSong(id) {
-    const { changeSong } = this.props;
+  handlePlay(songId) {
+    const { userClickPlay, forward } = this.props;
     return () => {
-      changeSong(id);
+      userClickPlay(songId);
+      forward();
     };
   }
 
@@ -31,7 +32,7 @@ class SearchIndex extends React.Component {
               className="Col-List__Item"
               key={song.id}
               role="presentation"
-              onClick={this.handleChangeSong(song.id)}
+              onClick={this.handlePlay(song.id)}
             >
               <SearchIndexItem
                 {...song}
@@ -45,7 +46,8 @@ class SearchIndex extends React.Component {
 }
 
 SearchIndex.propTypes = {
-  changeSong: func.isRequired,
+  userClickPlay: func.isRequired,
+  forward: func.isRequired,
   songs: arrayOf(shape({
     id: number,
     title: string,
