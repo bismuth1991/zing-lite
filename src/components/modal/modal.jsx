@@ -1,11 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { closeModal } from '../../actions/modal_actions';
+import { bool, func } from 'prop-types';
 
 const Modal = ({ modal, closeModal }) => {
   if (!modal) {
     return null;
   }
+
   let component;
   switch (modal) {
     case 'TEXT_ALEART':
@@ -13,6 +13,7 @@ const Modal = ({ modal, closeModal }) => {
     default:
       return null;
   }
+
   return (
     <div
       className="modal__background"
@@ -27,17 +28,9 @@ const Modal = ({ modal, closeModal }) => {
   );
 };
 
-const mapStateToProps = ({ ui: { modal } }) => ({
-  modal,
-});
+Modal.propTypes = {
+  modal: bool.isRequired,
+  closeModal: func.isRequired,
+};
 
-const mapDispatchToProps = dispatch => ({
-  closeModal: () => dispatch(closeModal()),
-});
-
-const ModalContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Modal);
-
-export default ModalContainer;
+export default Modal;
