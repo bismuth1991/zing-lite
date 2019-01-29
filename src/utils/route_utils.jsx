@@ -20,7 +20,7 @@ const Auth = ({
   />
 );
 
-const Protected = ({ component: Component, loggedIn, ...rest }) => (
+const Protected = ({ toPath, component: Component, loggedIn, ...rest }) => (
   <Route
     {...rest}
     render={props => (

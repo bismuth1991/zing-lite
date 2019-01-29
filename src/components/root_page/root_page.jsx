@@ -1,5 +1,6 @@
 import React from 'react';
 import { func, number } from 'prop-types';
+import Redirect from 'react-router-dom/Redirect';
 
 
 class RootPage extends React.Component {
@@ -34,7 +35,7 @@ class RootPage extends React.Component {
   }
 
   render() {
-    return <></>;
+    return <Redirect to="/home" />;
   }
 }
 
