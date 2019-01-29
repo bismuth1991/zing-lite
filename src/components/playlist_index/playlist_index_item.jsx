@@ -14,12 +14,14 @@ const PlaylistIndexItem = (props) => {
 
   return (
     <>
-      <div>
+      <div className="playlist-item__inner-wrapper">
         {isPlaying ? <SoundWave /> : null}
-        <span><h4>{title}</h4></span>
+        <span>
+          <h4 className="playlist-item__title">{title}</h4>
+        </span>
 
         <button
-          className="X"
+          className="playlist-item__X"
           type="button"
           onClick={handleRemoveSong(id)}
         >

@@ -1,4 +1,4 @@
-.SessionForm {
+.session-form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -7,18 +7,18 @@
   width: 60%
 }
 
-.SessionForm input {
+.session-form__input {
   color: white;
   border-bottom: 1px solid $light-gray;
 }
-.SessionForm input::placeholder {
+.session-form__input::placeholder {
   color: $light-gray;
 }
-.SessionForm input:focus {
+.session-form__input:focus {
   border-bottom: 1.5px solid white;
 }
 
-.SessionForm .errors {
+.session-form__errors {
   align-self: flex-start;
   list-style-position: inside;
   font-size: 0.6em;
@@ -26,7 +26,7 @@
   padding-inline-start: 0;
 }
 
-.SessionForm button {
+.session-form__button {
   background-color: $pink;
   color: white;
   width: 100%;
@@ -34,13 +34,13 @@
   margin: 0.2em;
   border-radius: 4px;
 }
-.SessionForm button:hover {
+.session-form__button:hover {
   background-color: $light-pink;
 }
 
-.SessionForm p {
+.session-form__text {
   font-size: 0.6em;
 }
-.SessionForm a {
+.session-form__link {
   text-decoration: underline;
 }

@@ -47,8 +47,9 @@ class SessionForm extends React.Component {
     const { username, password } = this.state;
 
     return (
-      <form className="SessionForm" onSubmit={this.handleSubmit}>
+      <form className="session-form" onSubmit={this.handleSubmit}>
         <input
+          className="session-form__input"
           type="text"
           placeholder="Username"
           value={username}
@@ -56,32 +57,33 @@ class SessionForm extends React.Component {
         />
         <br />
         <input
+          className="session-form__input"
           type="password"
           placeholder="Password"
           value={password}
           onChange={this.update('password')}
         />
 
-        <ul className="errors">
+        <ul className="session-form__errors">
           {errors.map((error, i) => (
             <li key={i}>{error}</li>
           ))}
         </ul>
         <br />
 
-        <button type="submit">{formType}</button>
-        <button type="submit">DEMO</button>
+        <button className="session-form__button" type="submit">{formType}</button>
+        <button className="session-form__button" type="submit">DEMO</button>
 
         {formType === 'LOG IN'
           ? (
-            <p>
+            <p className="session-form__text">
               {'Don\'t have an account? '}
-              <Link to="/profile/signup">Signup</Link>
+              <Link className="session-form__link" to="/profile/signup">Signup</Link>
             </p>
           ) : (
             <p>
               {'Already have an account? '}
-              <Link to="/profile/login">Login</Link>
+              <Link className="session-form__link" to="/profile/login">Login</Link>
             </p>
           )}
       </form>

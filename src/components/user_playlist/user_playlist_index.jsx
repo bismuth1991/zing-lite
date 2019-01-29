@@ -22,11 +22,11 @@ class UserPlaylistIndex extends React.Component {
 
     return (
       <>
-        <h4 className="UserPlaylistHeader">
+        <h4 className="profile__playlist__header">
           <span>{`Hi, ${user.username}! Below are your personal playlists`}</span>
         </h4>
 
-        <ul className="SongIndexContainer UserPlaylistIndex">
+        <ul className="SongIndexContainer profile__playlist">
           {userPlaylists.map(playlist => (
             <li className="SongIndexItem" key={playlist.id}>
               <UserPlaylistItem

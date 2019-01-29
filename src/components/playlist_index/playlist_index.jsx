@@ -35,13 +35,13 @@ class PlaylistIndex extends React.Component {
       <>
         <PlaylistFormContainer songIds={songs.map(song => song.id)} />
 
-        <ul className="PlaylistIndexContainer">
+        <ul className="Col-List">
 
           {songs.map(song => (
             <li
               className={`
-              PlaylistIndexItem 
-              ${song.id === playingSongId ? 'playing' : ''}
+              Col-List__Item playlist-item 
+              ${song.id === playingSongId ? 'playlist-item--playing' : ''}
             `}
               key={song.id}
               role="presentation"

@@ -13,7 +13,9 @@ class SearchBar extends React.Component {
     this.debounceSearch = debounce(query => props.fetchQueryData(query), 500);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
+
     this.debounceSearch.flush();
     this.setState({ query: '' });
   }

@@ -55,16 +55,16 @@ class PlaylistForm extends React.Component {
     if (!userId) return null;
 
     return (
-      <form className="PlaylistForm" onSubmit={e => e.preventDefault()}>
+      <form className="Input-Form" onSubmit={e => e.preventDefault()}>
         <input
-          className="PlaylistName"
+          className="Input-Form__Input"
           type="text"
           placeholder="Name this playlist..."
           value={newName}
           onChange={this.handleChange}
         />
 
-        <div className="Buttons">
+        <div className="Input-Form__Buttons">
           {playlistName
             ? (
               <button type="button" onClick={this.handleEdit}>
