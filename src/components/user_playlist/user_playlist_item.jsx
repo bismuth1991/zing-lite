@@ -1,27 +1,42 @@
 import React from 'react';
 import { string, func, arrayOf, number } from 'prop-types';
 
-const UserPlaylistItem = (props) => {
-  const { name, coverImageUrl, handlePlay, songIds, id } = props;
+class UserPlaylistItem extends React.Component {
+  constructor() {
+    super();
 
-  return (
-    <div className="image-wrapper">
-      <figure>
-        <img
-          className="profile__playlist__image"
-          src={coverImageUrl}
-          alt={name}
-        />
+    this.state = { loaded: false };
+    this.loaded = this.loaded.bind(this);
+  }
 
-        <button type="button" onClick={handlePlay(songIds, id)}>
-          <i className="far fa-play-circle" />
-        </button>
-      </figure>
+  loaded() {
+    this.setState({ loaded: true });
+  }
 
-      <h5 className="profile__playlist__name">{name}</h5>
-    </div>
-  );
-};
+  render() {
+    const { name, coverImageUrl, handlePlay, songIds, id } = this.props;
+    const { loaded } = this.state;
+
+    return (
+      <div className="image-wrapper">
+        <figure>
+          <img
+            className={`profile__playlist__image${loaded ? '--loaded' : ''}`}
+            src={coverImageUrl}
+            onLoad={this.loaded}
+            alt={name}
+          />
+
+          <button type="button" onClick={handlePlay(songIds, id)}>
+            <i className="far fa-play-circle" />
+          </button>
+        </figure>
+
+        <h5 className="profile__playlist__name">{name}</h5>
+      </div>
+    );
+  }
+}
 
 UserPlaylistItem.propTypes = {
   id: number.isRequired,

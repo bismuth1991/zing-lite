@@ -6,7 +6,7 @@ import { forward, userClickPlay } from '../../actions/audio_player_actions';
 
 const mapStateToProps = state => ({
   songs: getSongsInfo(state),
-  loading: state.ui.loading.homePageLoading,
+  loading: state.ui.loading.homePage,
 });
 
 const mapDispatchtoProps = dispatch => ({

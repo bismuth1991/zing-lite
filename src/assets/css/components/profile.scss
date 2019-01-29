@@ -9,14 +9,14 @@
 }
 .profile__playlist .fa-play-circle:hover {
   color: $light-pink;
-   transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .profile__playlist__name {
   color: $light-gray;
 }
 
-.profile__playlist__image {
+.profile__playlist__image--loaded {
   border: 4px solid $pink;
 }
 

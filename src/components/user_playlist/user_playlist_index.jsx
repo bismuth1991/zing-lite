@@ -1,6 +1,7 @@
 import React from 'react';
-import { shape, string, number, arrayOf, func } from 'prop-types';
+import { shape, string, number, arrayOf, func, bool } from 'prop-types';
 import UserPlaylistItem from './user_playlist_item';
+import LoadIcon from '../utils/loading_icon';
 
 class UserPlaylistIndex extends React.Component {
   constructor() {
@@ -18,9 +19,9 @@ class UserPlaylistIndex extends React.Component {
   }
 
   render() {
-    const { user, userPlaylists } = this.props;
+    const { user, userPlaylists, loading } = this.props;
 
-    return (
+    return !loading ? (
       <>
         <h4 className="profile__playlist__header">
           <span>{`Hi, ${user.username}! Below are your personal playlists`}</span>
@@ -33,16 +34,18 @@ class UserPlaylistIndex extends React.Component {
                 {...playlist}
                 userId={user.userId}
                 handlePlay={this.handlePlay}
+                loading
               />
             </li>
           ))}
         </ul>
       </>
-    );
+    ) : <LoadIcon loading={loading} />;
   }
 }
 
 UserPlaylistIndex.propTypes = {
+  loading: bool.isRequired,
   userPlaylists: arrayOf(shape({
     id: number,
     name: string,

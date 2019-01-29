@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, arrayOf, shape, number, string } from 'prop-types';
+import { func, arrayOf, shape, number, string, bool } from 'prop-types';
 
 import SongIndexItem from './song_index_item';
 import LoadIcon from '../utils/loading_icon';
@@ -53,6 +53,7 @@ SongIndex.propTypes = {
   fetchSomeSongs: func.isRequired,
   userClickPlay: func.isRequired,
   forward: func.isRequired,
+  loading: bool.isRequired,
   songs: arrayOf(shape({
     id: number,
     title: string,
