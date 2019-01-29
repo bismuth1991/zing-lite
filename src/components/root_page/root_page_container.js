@@ -4,8 +4,9 @@ import { fetchUserPlaylists } from '../../actions/user_playlist_actions';
 
 import RootPage from './root_page';
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({ session, ui }) => ({
   userId: session.user.userId,
+  loading: ui.loading.rootPageLoading,
 });
 
 const mapDispatchtoProps = dispatch => ({

@@ -1,17 +1,12 @@
-import { ROOT_PAGE_LOADING, ROOT_PAGE_LOADING_DONE } from '../actions/ui_loading_action';
+import { RECEIVE_SONGS } from '../actions/song_actions';
 
 const initialState = {
-  rootPageLoading: false,
+  rootPageLoading: true,
 };
 
 const loadingReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ROOT_PAGE_LOADING:
-      return {
-        ...state,
-        rootPageLoading: true,
-      };
-    case ROOT_PAGE_LOADING_DONE:
+    case RECEIVE_SONGS:
       return {
         ...state,
         rootPageLoading: false,
