@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
               <Link className="session-form__link" to="/profile/signup">Signup</Link>
             </p>
           ) : (
-            <p>
+            <p className="session-form__text">
               {'Already have an account? '}
               <Link className="session-form__link" to="/profile/login">Login</Link>
             </p>
