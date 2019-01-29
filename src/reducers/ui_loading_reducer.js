@@ -1,3 +1,5 @@
+import { ROOT_PAGE_LOADING, ROOT_PAGE_LOADING_DONE } from '../actions/ui_loading_action';
+
 const initialState = {
   rootPageLoading: false,
 };
