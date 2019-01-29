@@ -1,23 +1,22 @@
-.UserPlaylistHeader {
+.profile__playlist__header {
   margin-block-start: 0;
-  margin: 0 0.5em 1em 0.5em;
+  margin: 0 0.5em 1em 1em;
 }
 
-.UserPlaylistIndex {
-  * {
-    color: $light-gray;
-  }
-  i {
-    font-size: 200% !important;
-    color: $pink;
-  }
-  i:hover {
-    color: $light-pink;
-    transition: 0.5s ease;
-  }
+.profile__playlist .fa-play-circle {
+  font-size: 200% !important;
+  color: $pink;
+}
+.profile__playlist .fa-play-circle:hover {
+  color: $light-pink;
+   transition: 0.5s ease;
 }
 
-.UserPlaylistIndex img {
+.profile__playlist__name {
+  color: $light-gray;
+}
+
+.profile__playlist__image {
   border: 4px solid $pink;
 }
 

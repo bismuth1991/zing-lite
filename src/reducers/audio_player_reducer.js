@@ -15,6 +15,7 @@ import {
   removeSongLogic,
 } from '../utils/audio_player_utils';
 import { RECEIVE_USER_LOGOUT } from '../actions/session_actions';
+import { RECEIVE_USER_PLAYLIST } from '../actions/user_playlist_actions';
 
 
 const initialState = {
@@ -71,6 +72,12 @@ const audioPlayerReducer = (state = initialState, action) => {
         ...initialState,
         songIds: action.songIds,
         currentPlaylist: action.playlistId,
+      };
+    }
+    case RECEIVE_USER_PLAYLIST: {
+      return {
+        ...state,
+        currentPlaylist: parseInt(Object.keys(action.payload.data)[0], 10),
       };
     }
     case RECEIVE_USER_LOGOUT: {

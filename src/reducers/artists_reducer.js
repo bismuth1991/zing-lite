@@ -1,5 +1,6 @@
 import { RECEIVE_SONGS } from '../actions/song_actions';
 import { RECEIVE_USER_PLAYLISTS } from '../actions/user_playlist_actions';
+import { RECEIVE_QUERY_DATA } from '../actions/search_bar_actions';
 
 const initialState = {
   7: {
@@ -17,6 +18,11 @@ const artistsReducer = (state = initialState, action) => {
         ...action.payload.data.artists,
       };
     case RECEIVE_USER_PLAYLISTS:
+      return {
+        ...state,
+        ...action.payload.data.artists,
+      };
+    case RECEIVE_QUERY_DATA:
       return {
         ...state,
         ...action.payload.data.artists,

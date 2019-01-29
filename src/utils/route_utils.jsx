@@ -14,7 +14,7 @@ const Auth = ({
       !loggedIn ? (
         <Component {...props} />
       ) : (
-        <Redirect to="/home" />
+        <Redirect to="/profile" />
       )
     )}
   />

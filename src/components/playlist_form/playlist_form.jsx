@@ -14,6 +14,11 @@ class PlaylistForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { playlistName } = nextProps;
+    this.setState({ newName: `${playlistName || ''}` });
+  }
+
   makePlaylistData() {
     const { newName } = this.state;
     const { userId, songIds } = this.props;
@@ -30,15 +35,11 @@ class PlaylistForm extends React.Component {
   handleNew() {
     const { createPlaylist } = this.props;
     createPlaylist(this.makePlaylistData());
-
-    this.setState({ newName: '' });
   }
 
   handleEdit() {
     const { playlistId, editPlaylist } = this.props;
     editPlaylist(playlistId, this.makePlaylistData());
-
-    this.setState({ newName: '' });
   }
 
   handleChange(e) {
@@ -54,19 +55,19 @@ class PlaylistForm extends React.Component {
     if (!userId) return null;
 
     return (
-      <form className="PlaylistForm" onSubmit={e => e.preventDefault()}>
+      <form className="Input-Form" onSubmit={e => e.preventDefault()}>
         <input
-          className="PlaylistName"
+          className="Input-Form__Input"
           type="text"
           placeholder="Name this playlist..."
           value={newName}
           onChange={this.handleChange}
         />
 
-        <div className="Buttons">
+        <div className="Input-Form__Buttons">
           {playlistName
             ? (
-              <button type="button" onClick={this.handleSave}>
+              <button type="button" onClick={this.handleEdit}>
                 <h6>Save/Edit</h6>
               </button>
             ) : null}

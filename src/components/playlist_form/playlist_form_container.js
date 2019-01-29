@@ -18,7 +18,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   createPlaylist: songIds => dispatch(createPlaylist(songIds)),
-  editPlaylist: playlistId => dispatch(editPlaylist(playlistId)),
+  editPlaylist: (playlistId, playlistData) => dispatch(editPlaylist(playlistId, playlistData)),
 });
 
 const PlaylistFormContainer = connect(

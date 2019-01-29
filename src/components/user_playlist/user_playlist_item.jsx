@@ -8,16 +8,17 @@ const UserPlaylistItem = (props) => {
     <div>
       <figure>
         <img
+          className="profile__playlist__image"
           src={coverImageUrl}
           alt={name}
         />
 
         <button type="button" onClick={handlePlay(songIds, id)}>
-          <i className="far fa-play-circle fade" />
+          <i className="far fa-play-circle" />
         </button>
       </figure>
 
-      <h5>{name}</h5>
+      <h5 className="profile__playlist__name">{name}</h5>
     </div>
   );
 };

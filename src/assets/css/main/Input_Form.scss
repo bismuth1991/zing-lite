@@ -1,9 +1,9 @@
-.PlaylistForm {
+.Input-Form {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: 
-    "PlaylistName"
+    "Input"
     "Buttons";
 
   width: 90%;
@@ -12,27 +12,27 @@
   border-radius: 4px;
   border-bottom-right-radius: 10px;
 }
-.PlaylistForm:hover {
+.Input-Form:hover {
   border-color: $light-pink;
 }
 
-.PlaylistName { 
-  grid-area: PlaylistName; 
+.Input-Form__Input { 
+  grid-area: Input; 
   color: white;
   font-weight: 600;
   padding: 0.2em;
 }
-.PlaylistName::placeholder {
+.Input-Form__Input::placeholder {
   color: $light-gray;
 }
 
-.PlaylistForm .Buttons { 
+.Input-Form__Buttons { 
   grid-area: Buttons; 
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
-.PlaylistForm .Buttons button {
+.Input-Form__Buttons button {
   background-color: $pink;
   color: white;
   padding: 0 0.2em;
@@ -40,6 +40,6 @@
   border-radius: 10px;;
   height: 80%;
 }
-.PlaylistForm .Buttons button:hover {
+.Input-Form__Buttons button:hover {
   background-color: $light-pink;
 }
