@@ -2,6 +2,7 @@ import React from 'react';
 import { func, arrayOf, shape, number, string } from 'prop-types';
 
 import SongIndexItem from './song_index_item';
+import LoadIcon from '../utils/loading_icon';
 
 class SongIndex extends React.Component {
   constructor() {
@@ -28,21 +29,23 @@ class SongIndex extends React.Component {
   }
 
   render() {
-    const { songs, forward, userClickPlay } = this.props;
+    const { songs, forward, userClickPlay, loading } = this.props;
 
-    return (
-      <ul className="Row-List" onScroll={this.handleScroll}>
-        {songs.map(song => (
-          <li className="Row-List__Item" key={song.id}>
-            <SongIndexItem
-              {...song}
-              userClickPlay={userClickPlay}
-              forward={forward}
-            />
-          </li>
-        ))}
-      </ul>
-    );
+    return !loading
+      ? (
+        <ul className="Row-List" onScroll={this.handleScroll}>
+          {songs.map(song => (
+            <li className="Row-List__Item" key={song.id}>
+              <SongIndexItem
+                {...song}
+                userClickPlay={userClickPlay}
+                forward={forward}
+              />
+            </li>
+          ))}
+        </ul>
+      )
+      : <LoadIcon loading={loading} />;
   }
 }
 

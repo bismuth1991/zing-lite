@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
 import { bool } from 'prop-types';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 
@@ -13,6 +13,7 @@ import AudioPlayerContainer from './audio_player/audio_player_container';
 import PlaylistIndexContainer from './playlist_index/playlist_index_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+import About from './about/about';
 
 const App = (props) => {
   const { isLoggedIn } = props;
@@ -22,17 +23,21 @@ const App = (props) => {
       <NavBar />
 
       <div className="Main">
-        <Route path="/home" component={SongIndexContainer} />
+        <Switch>
+          <ProtectedRoute path="/playlist/:playlistId" component={PlaylistIndexContainer} />
+          <Route path="/playlist" component={PlaylistIndexContainer} />
 
-        <Route exact path="/playlist" component={PlaylistIndexContainer} />
-        <ProtectedRoute exact path="/playlist/:playlistId" component={PlaylistIndexContainer} />
+          <Route path="/home" component={SongIndexContainer} />
+          <Route path="/search" component={SearchIndexContainer} />
+          <Route path="/about" component={About} />
 
-        <Route path="/search" component={SearchIndexContainer} />
+          <AuthRoute path="/profile/login" component={LoginFormContainer} />
+          <AuthRoute path="/profile/signup" component={SignupFormContainer} />
+          <ProtectedRoute path="/profile" component={UserPlaylistContainer} />
 
-        <ProtectedRoute exact path="/profile" component={UserPlaylistContainer} />
+          <Redirect to="/home" />
+        </Switch>
 
-        <AuthRoute path="/profile/login" component={LoginFormContainer} />
-        <AuthRoute path="/profile/signup" component={SignupFormContainer} />
       </div>
 
       <aside className="Aside">

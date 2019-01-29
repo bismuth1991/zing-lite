@@ -1,7 +1,7 @@
 import { RECEIVE_SONGS } from '../actions/song_actions';
 
 const initialState = {
-  rootPageLoading: true,
+  homePageLoading: true,
 };
 
 const loadingReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const loadingReducer = (state = initialState, action) => {
     case RECEIVE_SONGS:
       return {
         ...state,
-        rootPageLoading: false,
+        homePageLoading: false,
       };
     default:
       return state;

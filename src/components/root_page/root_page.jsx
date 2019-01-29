@@ -1,9 +1,5 @@
 import React from 'react';
-import { func, number, bool } from 'prop-types';
-
-import Redirect from 'react-router-dom/Redirect';
-import LoadIcon from '../utils/loading_icon';
-
+import { func, number } from 'prop-types';
 
 class RootPage extends React.Component {
   constructor() {
@@ -37,11 +33,7 @@ class RootPage extends React.Component {
   }
 
   render() {
-    const { loading } = this.props;
-
-    return loading
-      ? <LoadIcon loading={loading} />
-      : <Redirect to="/home" />;
+    return <></>;
   }
 }
 
@@ -50,7 +42,6 @@ RootPage.defaultProps = {
 };
 
 RootPage.propTypes = {
-  loading: bool.isRequired,
   userId: number,
   fetchSomeSongs: func.isRequired,
   fetchUserPlaylists: func.isRequired,
