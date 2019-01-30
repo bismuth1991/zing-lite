@@ -3,20 +3,30 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .modal__child {
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: initial;
+  cursor: pointer;
   position: absolute;
   bottom: 0;
-  background-color: $blue;
+  background: $blue;
   width: 100%;
   border-top: 1px solid white;
   border-radius: 5px 5px 0 0;
   border-bottom: 1px solid white;
-  animation: slide-up 0.3s linear,
+  height: 3em;
+  transition: opacity 0.5s linear, height 0.5s step-start;
+}
+
+.modal__child--hidden {
+  opacity: 0;
+  height: 0;
+  transition-timing-function: linear, step-end;
 }
 
 .modal__child__text {
@@ -24,7 +34,3 @@
   color: white;
 }
 
-@keyframes slide-up {
-  from { bottom: -5em; } 
-  to { bottom: 0; }
-}

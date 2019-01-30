@@ -25,7 +25,7 @@ class PlaylistForm extends React.Component {
 
     return {
       playlist: {
-        name: newName,
+        name: newName || new Date().toLocaleString(),
         user_id: userId,
         song_ids: songIds,
       },
