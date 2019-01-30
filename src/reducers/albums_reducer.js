@@ -3,10 +3,10 @@ import { RECEIVE_USER_PLAYLISTS } from '../actions/user_playlist_actions';
 import { RECEIVE_QUERY_DATA } from '../actions/search_bar_actions';
 
 const initialState = {
-  12: {
-    id: 12,
-    name: 'Goi Giac Mo Xua',
-    coverImageUrl: 'https://www.dropbox.com/s/8qz1syuymksj5kt/GoiGiacMoXua.jpg?dl=1',
+  18: {
+    id: 18,
+    name: 'Roi Xa De Truong Thanh',
+    coverImageUrl: 'https://www.dropbox.com/s/kjd0m5db5al73wx/RoiXaDeTruongThanh.jpg?dl=1',
   },
 };
 

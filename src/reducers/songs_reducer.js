@@ -5,10 +5,10 @@ import { RECEIVE_QUERY_DATA } from '../actions/search_bar_actions';
 const initialState = {
   2: {
     id: 2,
-    title: 'Ha Trang',
-    url: 'https://www.dropbox.com/s/ezijh6nzgutwah9/HaTrang.mp3?dl=1',
-    artistId: 7,
-    albumId: 12,
+    title: 'Roi Xa De Truong Thanh',
+    url: 'https://www.dropbox.com/s/h1cthpxik696m43/RoiXaDeTruongThanh.mp3?dl=1',
+    artistId: 13,
+    albumId: 18,
   },
 };
 

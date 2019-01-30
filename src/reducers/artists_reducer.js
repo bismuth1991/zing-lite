@@ -3,10 +3,10 @@ import { RECEIVE_USER_PLAYLISTS } from '../actions/user_playlist_actions';
 import { RECEIVE_QUERY_DATA } from '../actions/search_bar_actions';
 
 const initialState = {
-  7: {
-    id: 7,
-    name: 'Quang Dung',
-    avatarUrl: 'https://www.dropbox.com/s/vcb2rfo9ohzzd62/QuangDung.jpg?dl=1',
+  13: {
+    id: 13,
+    name: 'Duy Zuno',
+    avatarUrl: 'https://www.dropbox.com/s/239urccuwvke063/DuyZuno.jpg?dl=1',
   },
 };
 
