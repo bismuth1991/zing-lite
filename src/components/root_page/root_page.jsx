@@ -26,6 +26,9 @@ class RootPage extends React.Component {
     const { fetchUserPlaylists, userId } = nextProps;
     const { hasFetchedPlaylist } = this.state;
 
+    if (!userId) {
+      this.setState({ hasFetchedPlaylist: false });
+    }
     if (userId && !hasFetchedPlaylist) {
       fetchUserPlaylists(userId);
       this.setState({ hasFetchedPlaylist: true });

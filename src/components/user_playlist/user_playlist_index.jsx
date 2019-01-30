@@ -24,7 +24,7 @@ class UserPlaylistIndex extends React.Component {
     return !loading ? (
       <>
         <h4 className="profile__playlist__header">
-          <span>{`Hi, ${user.username}! Below are your personal playlists`}</span>
+          <span>{`Welcome, ${user.username}! What are you in the mood for today?`}</span>
         </h4>
 
         <ul className="Row-List profile__playlist">

@@ -33,11 +33,9 @@ class Modal extends React.Component {
   renderComponent() {
     const { modal } = this.props;
 
-    let component;
     switch (modal.type) {
       case 'TEXT_ALERT': {
-        component = <TextAlert text={modal.content} />;
-        return component;
+        return <TextAlert text={modal.content} />;
       }
       default:
         return null;

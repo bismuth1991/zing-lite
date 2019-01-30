@@ -8,6 +8,7 @@
 .SpinningDisc > img {
   object-fit: cover;
   max-height: 90%;
+  max-width: 90%;
   border-radius: 50%;
   animation: spin infinite 20s linear;
 }
