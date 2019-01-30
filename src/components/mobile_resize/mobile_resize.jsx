@@ -12,25 +12,19 @@ const MobileResize = ({ currentPhone, handleSwitchPhone }) => {
     'iPhone-6-7-8-Plus',
     'iPhone-X',
   ];
+
   return (
     <nav className="mobile-resize">
-      {/* {phones.forEach(phone => (
+      {phones.map(phone => (
         <button
+          key={phone}
           type="button"
-          className={`mobile-resize__button ${phone === currentPhone ? 'active' : ''}`}
+          className={`mobile-resize__button${phone === currentPhone ? '--active' : ''}`}
           onClick={handleSwitchPhone}
         >
           {phone}
         </button>
-      ))} */}
-
-      <button type="button" onClick={handleSwitchPhone}>Galaxy-S5</button>
-      <button type="button" onClick={handleSwitchPhone}>Pixel-2</button>
-      <button type="button" onClick={handleSwitchPhone}>Pixel-2-XL</button>
-      <button type="button" onClick={handleSwitchPhone}>iPhone-5-SE</button>
-      <button type="button" onClick={handleSwitchPhone}>iPhone-6-7-8</button>
-      <button type="button" onClick={handleSwitchPhone}>iPhone-6-7-8-Plus</button>
-      <button type="button" onClick={handleSwitchPhone}>iPhone-X</button>
+      ))}
     </nav>
   );
 };

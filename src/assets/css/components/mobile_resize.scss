@@ -3,14 +3,15 @@
   position: absolute;
   top: 5px;
   left: 5px;
-  width: 100%;
+  width: 90%;
   height: 50px;
 }
 
 .mobile-resize button {
   color: white;
   margin: 0.3em;
+  font-size: 0.8em;
 }
-.mobile-resize__button .active {
+.mobile-resize__button--active {
   background-color: $light-pink;
 }
