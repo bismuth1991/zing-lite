@@ -8,4 +8,5 @@ export const receiveSongs = payload => ({
 });
 
 export const fetchSomeSongs = (offSet = 0) => dispatch => songApiUtil.fetchSomeSongs(offSet)
-  .then(payload => dispatch(receiveSongs(payload)));
+  .then(payload => dispatch(receiveSongs(payload)))
+  .catch(err => console.warn(err));

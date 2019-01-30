@@ -7,7 +7,8 @@ export function handlePause() {
 }
 
 export function playAudio() {
-  this.audioRef.current.play();
+  this.audioRef.current.play()
+    .catch(err => console.warn(err));
 }
 
 export function pauseAudio() {

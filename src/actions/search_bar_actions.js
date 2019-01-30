@@ -13,4 +13,5 @@ export const receiveQueryData = payload => ({
 });
 
 export const fetchQueryData = query => dispatch => fetchDataByQuery(query)
-  .then(payload => dispatch(receiveQueryData(payload)));
+  .then(payload => dispatch(receiveQueryData(payload)))
+  .catch(err => console.warn(err));

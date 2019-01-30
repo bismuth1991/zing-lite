@@ -23,6 +23,7 @@ export const removeUserPlaylist = playlistId => ({
 export const fetchUserPlaylists = userId => dispatch => (
   userPlaylistApiUtil.fetchUserPlaylists(userId)
     .then(payload => dispatch(receiveUserPlaylists(payload)))
+    .catch(err => console.warn(err))
 );
 
 export const createPlaylist = playlistData => dispatch => (
@@ -34,6 +35,7 @@ export const createPlaylist = playlistData => dispatch => (
         content: 'New playlist created!',
       })),
     ]))
+    .catch(err => console.warn(err))
 );
 
 export const editPlaylist = (playlistId, playlistData) => dispatch => (
@@ -45,9 +47,11 @@ export const editPlaylist = (playlistId, playlistData) => dispatch => (
         content: 'Playlist saved!',
       })),
     ]))
+    .catch(err => console.warn(err))
 );
 
 export const deleteUserPlaylist = playlistId => dispatch => (
   userPlaylistApiUtil.deletePlaylist(playlistId)
     .then(deletedPlaylistId => dispatch(removeUserPlaylist(deletedPlaylistId)))
+    .catch(err => console.warn(err))
 );
