@@ -1,0 +1,28 @@
+.modal__background {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.modal__child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  background-color: $blue;
+  width: 100%;
+  border: 1px solid white;
+  animation: slide-up 0.5s linear,
+}
+
+.modal__child__text {
+  padding: 1em;
+  color: white;
+}
+
+@keyframes slide-up {
+  from { bottom: -5em; } 
+  to { bottom: 0; }
+}

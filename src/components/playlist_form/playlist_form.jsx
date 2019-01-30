@@ -7,8 +7,6 @@ class PlaylistForm extends React.Component {
 
     this.state = {
       newName: `${props.playlistName || ''}`,
-      editButtonText: 'Save/Edit',
-      newButtonText: 'Create New',
     };
 
     this.handleNew = this.handleNew.bind(this);
@@ -36,10 +34,6 @@ class PlaylistForm extends React.Component {
 
   handleNew() {
     const { createPlaylist } = this.props;
-
-    this.setState({ newButtonText: 'Playlist Created' });
-    setTimeout(() => this.setState({ newButtonText: 'Create New' }), 1000);
-
     createPlaylist(this.makePlaylistData());
   }
 
@@ -56,7 +50,7 @@ class PlaylistForm extends React.Component {
 
   render() {
     const { playlistName, userId } = this.props;
-    const { newName, editButtonText, newButtonText } = this.state;
+    const { newName } = this.state;
 
     if (!userId) return null;
 
@@ -74,12 +68,12 @@ class PlaylistForm extends React.Component {
           {playlistName
             ? (
               <button type="button" onClick={this.handleEdit}>
-                <h6>{editButtonText}</h6>
+                <h6>Save</h6>
               </button>
             ) : null}
 
           <button type="button" onClick={this.handleNew}>
-            <h6>{newButtonText}</h6>
+            <h6>Create New</h6>
           </button>
         </div>
       </form>

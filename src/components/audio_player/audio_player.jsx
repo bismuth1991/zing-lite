@@ -78,6 +78,7 @@ class AudioPlayer extends React.Component {
           url={url}
           forward={forward}
           shuffle={shuffle}
+          isPlaying={isPlaying}
           isEndOfLoop={isEndOfLoop}
           isOnLoop={isOnLoop}
           isOnShuffle={isOnShuffle}

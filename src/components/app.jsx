@@ -14,6 +14,7 @@ import PlaylistIndexContainer from './playlist_index/playlist_index_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import About from './about/about';
+import ModalContainer from './modal/modal_container';
 
 const App = (props) => {
   const { isLoggedIn } = props;
@@ -21,6 +22,8 @@ const App = (props) => {
   return (
     <div className={`Site ${isLoggedIn && 'Site-LoggedIn'}`}>
       <NavBar />
+
+      <ModalContainer />
 
       <div className="Main">
         <Switch>

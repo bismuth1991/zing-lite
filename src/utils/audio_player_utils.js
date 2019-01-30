@@ -97,7 +97,7 @@ export const removeSongLogic = (state, action) => {
   } else if (removeSongIndex <= playingSongIndex) {
     newPlayingSongIndex = playingSongIndex - 1;
 
-    if (newPlayingSongIndex < 0) newPlayingSongIndex = newSongIds.length - 1;
+    if (newPlayingSongIndex < 0) newPlayingSongIndex = 0;
   }
 
   return {

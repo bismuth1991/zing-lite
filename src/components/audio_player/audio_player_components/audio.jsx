@@ -7,6 +7,7 @@ const Audio = (props) => {
   const {
     audioRef,
     url,
+    isPlaying,
     isEndOfLoop,
     isOnLoop,
     isOnShuffle,
@@ -34,12 +35,18 @@ const Audio = (props) => {
     window.setTimeout(() => { playAudio(); }, 0);
   };
 
+  const handleDurationChange = () => {
+    if (isPlaying) {
+      playAudio();
+    }
+  };
+
   return (
     <audio
       src={url}
       ref={audioRef}
       onLoadedMetadata={getTotalAudioTime}
-      onDurationChange={playAudio}
+      onDurationChange={handleDurationChange}
       onTimeUpdate={updateCurrentAudioTime}
       onVolumeChange={updateVolume}
       onPause={handlePause}
@@ -52,6 +59,7 @@ const Audio = (props) => {
 Audio.propTypes = {
   audioRef: shape({ current: instanceOf(Element) }).isRequired,
   url: string.isRequired,
+  isPlaying: bool.isRequired,
   isEndOfLoop: bool.isRequired,
   isOnLoop: bool.isRequired,
   isOnShuffle: bool.isRequired,

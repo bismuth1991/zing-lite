@@ -1,4 +1,5 @@
 import * as userPlaylistApiUtil from '../utils/user_playlist_utils';
+import { openModal } from './modal_actions';
 
 export const RECEIVE_USER_PLAYLISTS = 'RECEIVE_USER_PLAYLISTS';
 export const RECEIVE_USER_PLAYLIST = 'RECEIVE_USER_PLAYLIST';
@@ -26,12 +27,24 @@ export const fetchUserPlaylists = userId => dispatch => (
 
 export const createPlaylist = playlistData => dispatch => (
   userPlaylistApiUtil.createPlaylist(playlistData)
-    .then(payload => dispatch(receiveUserPlaylist(payload)))
+    .then(payload => Promise.all([
+      dispatch(receiveUserPlaylist(payload)),
+      dispatch(openModal({
+        type: 'TEXT_ALERT',
+        content: 'New playlist created!',
+      })),
+    ]))
 );
 
 export const editPlaylist = (playlistId, playlistData) => dispatch => (
   userPlaylistApiUtil.editPlaylist(playlistId, playlistData)
-    .then(payload => dispatch(receiveUserPlaylist(payload)))
+    .then(payload => Promise.all([
+      dispatch(receiveUserPlaylist(payload)),
+      dispatch(openModal({
+        type: 'TEXT_ALERT',
+        content: 'Playlist saved!',
+      })),
+    ]))
 );
 
 export const deleteUserPlaylist = playlistId => dispatch => (
