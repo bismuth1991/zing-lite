@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, func } from 'prop-types';
+import { func, shape, string } from 'prop-types';
 import TextAlert from './text_alert';
 
 const Modal = ({ modal, closeModal }) => {
@@ -30,8 +30,15 @@ const Modal = ({ modal, closeModal }) => {
   );
 };
 
+Modal.defaultProps = {
+  modal: null,
+};
+
 Modal.propTypes = {
-  modal: bool.isRequired,
+  modal: shape({
+    type: string.isRequired,
+    content: string,
+  }),
   closeModal: func.isRequired,
 };
 

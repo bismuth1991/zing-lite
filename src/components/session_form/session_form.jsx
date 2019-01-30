@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   componentWillUnmount() {
@@ -21,9 +22,7 @@ class SessionForm extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({
-        [field]: e.target.value,
-      });
+      this.setState({ [field]: e.target.value });
     };
   }
 
@@ -39,6 +38,18 @@ class SessionForm extends React.Component {
     this.setState({
       username: '',
       password: '',
+    });
+  }
+
+  handleDemoLogin(e) {
+    e.preventDefault();
+    const { processForm } = this.props;
+
+    processForm({
+      user: {
+        username: 'guest',
+        password: 'password',
+      },
     });
   }
 
@@ -72,7 +83,7 @@ class SessionForm extends React.Component {
         <br />
 
         <button className="session-form__button" type="submit">{formType}</button>
-        <button className="session-form__button" type="submit">DEMO</button>
+        <button className="session-form__button" type="submit" onClick={this.handleDemoLogin}>DEMO</button>
 
         {formType === 'LOG IN'
           ? (

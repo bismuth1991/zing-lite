@@ -13,12 +13,14 @@
   bottom: 0;
   background-color: $blue;
   width: 100%;
-  border: 1px solid white;
-  animation: slide-up 0.5s linear,
+  border-top: 1px solid white;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid white;
+  animation: slide-up 0.3s linear,
 }
 
 .modal__child__text {
-  padding: 1em;
+  padding: 0.5em;
   color: white;
 }
 

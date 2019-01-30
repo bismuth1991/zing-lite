@@ -3,6 +3,7 @@ import {
   BACKWARD,
   SHUFFLE,
   USER_CLICK_PLAY,
+  ADD_SONG,
   CHANGE_SONG,
   REMOVE_SONG,
   START_PLAYLIST,
@@ -55,6 +56,15 @@ const audioPlayerReducer = (state = initialState, action) => {
       return {
         ...state,
         songIds: newSongIds,
+      };
+    }
+    case ADD_SONG: {
+      return {
+        ...state,
+        songIds: [
+          ...state.songIds,
+          action.songId,
+        ],
       };
     }
     case CHANGE_SONG: {

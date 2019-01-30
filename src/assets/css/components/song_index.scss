@@ -1,0 +1,10 @@
+.song-index-item .image-wrapper figure:hover {
+  img {
+    border: 2px solid white;
+  }
+}
+
+.image-wrapper__title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }

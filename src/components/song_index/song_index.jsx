@@ -1,8 +1,8 @@
 import React from 'react';
 import { func, arrayOf, shape, number, string, bool } from 'prop-types';
 
-import SongIndexItem from './song_index_item';
 import LoadIcon from '../utils/loading_icon';
+import SongIndexItemContainer from './song_index_item_container';
 
 class SongIndex extends React.Component {
   constructor() {
@@ -29,18 +29,14 @@ class SongIndex extends React.Component {
   }
 
   render() {
-    const { songs, forward, userClickPlay, loading } = this.props;
+    const { songs, loading } = this.props;
 
     return !loading
       ? (
         <ul className="Row-List" onScroll={this.handleScroll}>
           {songs.map(song => (
-            <li className="Row-List__Item" key={song.id}>
-              <SongIndexItem
-                {...song}
-                userClickPlay={userClickPlay}
-                forward={forward}
-              />
+            <li className="Row-List__Item song-index-item" key={song.id}>
+              <SongIndexItemContainer {...song} />
             </li>
           ))}
         </ul>
