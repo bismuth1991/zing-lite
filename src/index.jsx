@@ -9,6 +9,8 @@ import './assets/css/index.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
+  // root.height = window.innerHeight;
+  root.width = window.innerWidth;
 
   let store;
 

@@ -15,41 +15,95 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import About from './about/about';
 import ModalContainer from './modal/modal_container';
+import MobileResize from './mobile_resize/mobile_resize';
 
-const App = (props) => {
-  const { isLoggedIn } = props;
+class App extends React.Component {
+  constructor() {
+    super();
 
-  return (
-    <div className={`Site ${isLoggedIn && 'Site-LoggedIn'}`}>
-      <NavBar />
+    this.state = ({ currentPhone: 'Galaxy-S5' });
 
-      <ModalContainer />
+    this.handleSwitchPhone = this.handleSwitchPhone.bind(this);
+  }
 
-      <div className="Main">
-        <Switch>
-          <ProtectedRoute path="/playlist/:playlistId" component={PlaylistIndexContainer} />
-          <Route path="/playlist" component={PlaylistIndexContainer} />
+  handleSwitchPhone(e) {
+    this.setState({ currentPhone: e.target.innerText });
+  }
 
-          <Route path="/home" component={SongIndexContainer} />
-          <Route path="/search" component={SearchIndexContainer} />
-          <Route path="/about" component={About} />
+  render() {
+    const { isLoggedIn } = this.props;
+    const { currentPhone } = this.state;
 
-          <AuthRoute path="/profile/login" component={LoginFormContainer} />
-          <AuthRoute path="/profile/signup" component={SignupFormContainer} />
-          <ProtectedRoute path="/profile" component={UserPlaylistContainer} />
+    return (
+      <div className={`Site ${isLoggedIn && 'Site-LoggedIn '} Site--${currentPhone}`}>
+        <MobileResize
+          handleSwitchPhone={this.handleSwitchPhone}
+          currentPhone={currentPhone}
+        />
 
-          <Redirect to="/home" />
-        </Switch>
+        <NavBar />
 
+        <ModalContainer />
+
+        <div className="Main">
+          <Switch>
+            <ProtectedRoute path="/playlist/:playlistId" component={PlaylistIndexContainer} />
+            <Route path="/playlist" component={PlaylistIndexContainer} />
+
+            <Route path="/home" component={SongIndexContainer} />
+            <Route path="/search" component={SearchIndexContainer} />
+            <Route path="/about" component={About} />
+
+            <AuthRoute path="/profile/login" component={LoginFormContainer} />
+            <AuthRoute path="/profile/signup" component={SignupFormContainer} />
+            <ProtectedRoute path="/profile" component={UserPlaylistContainer} />
+
+            <Redirect to="/home" />
+          </Switch>
+        </div>
+
+        <aside className="Aside">
+          <Route path="/" component={RootPage} />
+          <Route path="/" component={AudioPlayerContainer} />
+        </aside>
       </div>
+    );
+  }
+}
 
-      <aside className="Aside">
-        <Route path="/" component={RootPage} />
-        <Route path="/" component={AudioPlayerContainer} />
-      </aside>
-    </div>
-  );
-};
+// const App = (props) => {
+//   const { isLoggedIn } = props;
+
+//   return (
+//     <div className={`Site ${isLoggedIn && 'Site-LoggedIn '} Site--galaxy-S5`}>
+//       <NavBar />
+
+//       <ModalContainer />
+
+//       <div className="Main">
+//         <Switch>
+//           <ProtectedRoute path="/playlist/:playlistId" component={PlaylistIndexContainer} />
+//           <Route path="/playlist" component={PlaylistIndexContainer} />
+
+//           <Route path="/home" component={SongIndexContainer} />
+//           <Route path="/search" component={SearchIndexContainer} />
+//           <Route path="/about" component={About} />
+
+//           <AuthRoute path="/profile/login" component={LoginFormContainer} />
+//           <AuthRoute path="/profile/signup" component={SignupFormContainer} />
+//           <ProtectedRoute path="/profile" component={UserPlaylistContainer} />
+
+//           <Redirect to="/home" />
+//         </Switch>
+//       </div>
+
+//       <aside className="Aside">
+//         <Route path="/" component={RootPage} />
+//         <Route path="/" component={AudioPlayerContainer} />
+//       </aside>
+//     </div>
+//   );
+// };
 
 App.propTypes = {
   isLoggedIn: bool.isRequired,
