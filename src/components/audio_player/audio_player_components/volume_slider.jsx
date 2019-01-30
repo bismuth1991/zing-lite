@@ -3,7 +3,10 @@ import { number, func } from 'prop-types';
 
 const VolumeSlider = (props) => {
   const {
-    volume, preMuteVolume, handleMute, handleUnmute, handleVolume,
+    volume,
+    preMuteVolume,
+    handleMute,
+    handleUnmute,
   } = props;
 
   let volumeButton;
@@ -24,15 +27,6 @@ const VolumeSlider = (props) => {
   return (
     <>
       {volumeButton}
-
-      {/* <input
-        type="range"
-        min="0"
-        max="100"
-        step="1"
-        value={volume}
-        onChange={handleVolume}
-      /> */}
     </>
   );
 };

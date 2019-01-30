@@ -2,15 +2,10 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const BackwardButton = (props) => {
-  const { backward, playAudio } = props;
-
-  const playPrevSong = () => {
-    backward();
-    window.setTimeout(() => { playAudio(); }, 0);
-  };
+  const { backward } = props;
 
   return (
-    <button type="button" onClick={playPrevSong}>
+    <button type="button" onClick={backward}>
       <i className="fas fa-step-backward" />
     </button>
   );
@@ -18,7 +13,6 @@ const BackwardButton = (props) => {
 
 BackwardButton.propTypes = {
   backward: func.isRequired,
-  playAudio: func.isRequired,
 };
 
 export default BackwardButton;

@@ -2,15 +2,10 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const ForwardButton = (props) => {
-  const { forward, playAudio } = props;
-
-  const playNextSong = () => {
-    forward();
-    window.setTimeout(() => { playAudio(); }, 0);
-  };
+  const { forward } = props;
 
   return (
-    <button type="button" onClick={playNextSong}>
+    <button type="button" onClick={forward}>
       <i className="fas fa-step-forward" />
     </button>
   );
@@ -18,7 +13,6 @@ const ForwardButton = (props) => {
 
 ForwardButton.propTypes = {
   forward: func.isRequired,
-  playAudio: func.isRequired,
 };
 
 export default ForwardButton;

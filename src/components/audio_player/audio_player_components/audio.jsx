@@ -31,8 +31,6 @@ const Audio = (props) => {
     } else {
       forward();
     }
-
-    window.setTimeout(() => { playAudio(); }, 0);
   };
 
   const handleDurationChange = () => {
