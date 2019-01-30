@@ -7,8 +7,14 @@ export function handlePause() {
 }
 
 export function playAudio() {
-  this.audioRef.current.play()
-    .catch(err => console.warn(err));
+  const { hasMount } = this.state;
+
+  if (!hasMount) {
+    this.setState({ hasMount: true });
+  } else {
+    this.audioRef.current.play()
+      .catch(err => console.warn(err));
+  }
 }
 
 export function pauseAudio() {

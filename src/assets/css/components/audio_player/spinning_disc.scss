@@ -10,6 +10,10 @@
   max-height: 90%;
   max-width: 90%;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.SpinningDisc--spin > img {
   animation: spin infinite 20s linear;
 }
 
