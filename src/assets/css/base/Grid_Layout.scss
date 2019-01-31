@@ -6,9 +6,14 @@
 }
 
 @media only screen and (max-device-width: 480px) {
+  body {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
   .Site {
-    width: 95vw !important;
-    height: 90vh !important;
+    width: 100vw !important;
+    height: 100vh !important;
   }
 }
 
