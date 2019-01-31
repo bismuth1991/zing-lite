@@ -6,12 +6,9 @@
 }
 
 @media only screen and (max-device-width: 480px) {
-  html {
-    background: transparent;
-  }
   .Site {
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 95vw !important;
+    height: 90vh !important;
   }
 }
 
