@@ -15,7 +15,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import About from './about/about';
 import ModalContainer from './modal/modal_container';
-import MobileResize from './mobile_resize/mobile_resize';
+// import MobileResize from './mobile_resize/mobile_resize';
 
 class App extends React.Component {
   constructor() {
@@ -36,10 +36,10 @@ class App extends React.Component {
 
     return (
       <div className={`Site ${isLoggedIn && 'Site-LoggedIn '} Site--${currentPhone}`}>
-        <MobileResize
+        {/* <MobileResize
           handleSwitchPhone={this.handleSwitchPhone}
           currentPhone={currentPhone}
-        />
+        /> */}
 
         <NavBar />
 
