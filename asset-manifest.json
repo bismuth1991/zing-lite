@@ -1,15 +1,15 @@
 {
-  "main.css": "/zing-lite/static/css/main.80539652.chunk.css",
-  "main.js": "/zing-lite/static/js/main.e6291846.chunk.js",
-  "main.js.map": "/zing-lite/static/js/main.e6291846.chunk.js.map",
+  "main.css": "/zing-lite/static/css/main.bfbdeb16.chunk.css",
+  "main.js": "/zing-lite/static/js/main.4a5a9ec7.chunk.js",
+  "main.js.map": "/zing-lite/static/js/main.4a5a9ec7.chunk.js.map",
   "static/css/1.40fb7e43.chunk.css": "/zing-lite/static/css/1.40fb7e43.chunk.css",
   "static/js/1.a26aee9c.chunk.js": "/zing-lite/static/js/1.a26aee9c.chunk.js",
   "static/js/1.a26aee9c.chunk.js.map": "/zing-lite/static/js/1.a26aee9c.chunk.js.map",
   "runtime~main.js": "/zing-lite/static/js/runtime~main.2652eacf.js",
   "runtime~main.js.map": "/zing-lite/static/js/runtime~main.2652eacf.js.map",
   "static/css/1.40fb7e43.chunk.css.map": "/zing-lite/static/css/1.40fb7e43.chunk.css.map",
-  "static/css/main.80539652.chunk.css.map": "/zing-lite/static/css/main.80539652.chunk.css.map",
+  "static/css/main.bfbdeb16.chunk.css.map": "/zing-lite/static/css/main.bfbdeb16.chunk.css.map",
   "index.html": "/zing-lite/index.html",
-  "precache-manifest.508417b3bb7cc3b60a37343053eec0ba.js": "/zing-lite/precache-manifest.508417b3bb7cc3b60a37343053eec0ba.js",
+  "precache-manifest.caae5f3beb55187b9c9d7b7db86a4a5b.js": "/zing-lite/precache-manifest.caae5f3beb55187b9c9d7b7db86a4a5b.js",
   "service-worker.js": "/zing-lite/service-worker.js"
 }
