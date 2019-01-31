@@ -4,23 +4,23 @@ self.__precacheManifest = [
     "url": "/zing-lite/static/js/runtime~main.2652eacf.js"
   },
   {
-    "revision": "4a5a9ec7cee75f3e6d29",
-    "url": "/zing-lite/static/js/main.4a5a9ec7.chunk.js"
+    "revision": "141e744a90d52e8c12a0",
+    "url": "/zing-lite/static/js/main.141e744a.chunk.js"
   },
   {
     "revision": "a26aee9c809caa89856a",
     "url": "/zing-lite/static/js/1.a26aee9c.chunk.js"
   },
   {
-    "revision": "4a5a9ec7cee75f3e6d29",
-    "url": "/zing-lite/static/css/main.bfbdeb16.chunk.css"
+    "revision": "141e744a90d52e8c12a0",
+    "url": "/zing-lite/static/css/main.cac3fae9.chunk.css"
   },
   {
     "revision": "a26aee9c809caa89856a",
     "url": "/zing-lite/static/css/1.40fb7e43.chunk.css"
   },
   {
-    "revision": "506cb1b09906a9b334c0200f1ac2fd5f",
+    "revision": "3555ee90d33c8694a5fd246d7552f760",
     "url": "/zing-lite/index.html"
   }
 ];
