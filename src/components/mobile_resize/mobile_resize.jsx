@@ -11,6 +11,10 @@ const MobileResize = ({ currentPhone, handleSwitchPhone }) => {
     'iPhone-6-7-8',
     'iPhone-6-7-8-Plus',
     'iPhone-X',
+    'iPad',
+    'iPad--landscape',
+    'iPad-Pro',
+    'iPad-Pro--landscape',
   ];
 
   return (

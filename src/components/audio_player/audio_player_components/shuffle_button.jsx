@@ -5,7 +5,11 @@ const ShuffleButton = (props) => {
   const { isOnShuffle, toggleShuffle } = props;
 
   return (
-    <button type="button" onClick={toggleShuffle(isOnShuffle)}>
+    <button
+      type="button"
+      title="Toggle shuffle"
+      onClick={toggleShuffle(isOnShuffle)}
+    >
       <i className={`fas fa-random ${isOnShuffle && 'active'}`} />
     </button>
   );

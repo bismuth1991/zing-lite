@@ -20,7 +20,7 @@
 .Site--iPhone-5-SE {
   width: 320px;
   height: 568px;
-  font-size: 1rem !important;
+  font-size: 1rem;
 }
 .Site--iPhone-6-7-8 {
   width: 375px;
@@ -33,6 +33,23 @@
 .Site--iPhone-X {
   width: 375px;
   height: 812px;
+}
+.Site--iPad {
+  width: 768px;
+  height: 1024px;
+  font-size: 2rem;
+}
+.Site--iPad--landscape {
+  width: 1024px;
+  height: 768px;
+}
+.Site--iPad-Pro {
+  width: 1024px;
+  height: 1366px;
+}
+.Site--iPad-Pro--landscape {
+  width: 1366px;
+  height: 1024px;
 }
 
 
