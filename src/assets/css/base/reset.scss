@@ -5,16 +5,17 @@
 }
 
 html {
-  background-color: #1d1924;
+  // background-color: #1d1924;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 18px;
   text-rendering: optimizeLegibility;
+  background: linear-gradient(45deg, #1D1924, #6c5b7b);
 }
 
 body { 
   height: 100vh; 
   display: flex; 
-  justify-content: center; 
+  justify-content: space-around; 
   align-items: center; 
 }
 

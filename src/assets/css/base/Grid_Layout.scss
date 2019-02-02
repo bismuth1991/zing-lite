@@ -1,8 +1,35 @@
+.Site__Container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  height: 768px;
+  font-size: 1.15rem;
+}
+.Site__Title {
+  flex: none;
+  writing-mode: vertical-rl;
+  color: white;
+  text-align: end;
+  font-size: 2.6em;
+  margin: 20px 20px 20px 20px;
+}
 .Site { 
   border: 10px solid white;
   border-radius: 15px;
   color: white;
-  font-size: 1.15rem;
+  margin-bottom: 20px;
+  font-size: 1em
+}
+.Site__Author {
+  flex: none;
+  width: 32%;
+  display: block;
+  margin: 20px 20px;
+  color: white;
+  text-align: center;
+  font-size: 1em;
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -46,24 +73,6 @@
   width: 375px;
   height: 812px;
 }
-.Site--iPad {
-  width: 768px;
-  height: 1024px;
-  font-size: 2rem;
-}
-.Site--iPad--landscape {
-  width: 1024px;
-  height: 768px;
-}
-.Site--iPad-Pro {
-  width: 1024px;
-  height: 1366px;
-}
-.Site--iPad-Pro--landscape {
-  width: 1366px;
-  height: 1024px;
-}
-
 
 .Site {
   display: grid;

@@ -17,30 +17,70 @@ import About from './about/about';
 import ModalContainer from './modal/modal_container';
 // import MobileResize from './mobile_resize/mobile_resize';
 
-class App extends React.Component {
-  constructor() {
-    super();
+// class App extends React.Component {
+//   constructor() {
+//     super();
 
-    this.state = ({ currentPhone: 'Galaxy-S5' });
+//     this.state = ({ currentPhone: 'Galaxy-S5' });
 
-    this.handleSwitchPhone = this.handleSwitchPhone.bind(this);
-  }
+//     this.handleSwitchPhone = this.handleSwitchPhone.bind(this);
+//   }
 
-  handleSwitchPhone(e) {
-    this.setState({ currentPhone: e.target.innerText });
-  }
+//   handleSwitchPhone(e) {
+//     this.setState({ currentPhone: e.target.innerText });
+//   }
 
-  render() {
-    const { isLoggedIn } = this.props;
-    const { currentPhone } = this.state;
+//   render() {
+//     const { isLoggedIn } = this.props;
+//     const { currentPhone } = this.state;
 
-    return (
-      <div className={`Site ${isLoggedIn && 'Site-LoggedIn '} Site--${currentPhone}`}>
-        {/* <MobileResize
-          handleSwitchPhone={this.handleSwitchPhone}
-          currentPhone={currentPhone}
-        /> */}
+//     return (
+//       <div className={`Site ${isLoggedIn && 'Site-LoggedIn '} Site--${currentPhone}`}>
+//         <MobileResize
+//           handleSwitchPhone={this.handleSwitchPhone}
+//           currentPhone={currentPhone}
+//         />
 
+//         <NavBar />
+
+//         <ModalContainer />
+
+//         <div className="Main">
+//           <Switch>
+//             <ProtectedRoute path="/playlist/:playlistId" component={PlaylistIndexContainer} />
+//             <Route path="/playlist" component={PlaylistIndexContainer} />
+
+//             <Route path="/home" component={SongIndexContainer} />
+//             <Route path="/search" component={SearchIndexContainer} />
+//             <Route path="/about" component={About} />
+
+//             <AuthRoute path="/profile/login" component={LoginFormContainer} />
+//             <AuthRoute path="/profile/signup" component={SignupFormContainer} />
+//             <ProtectedRoute path="/profile" component={UserPlaylistContainer} />
+
+//             <Redirect to="/home" />
+//           </Switch>
+//         </div>
+
+//         <aside className="Aside">
+//           <Route path="/" component={RootPage} />
+//           <Route path="/" component={AudioPlayerContainer} />
+//         </aside>
+//       </div>
+//     );
+//   }
+// }
+
+const App = (props) => {
+  const { isLoggedIn } = props;
+
+  return (
+    <div className="Site__Container">
+      <p className="Site__Title">
+        <span>Zing Lite</span>
+      </p>
+
+      <div className={`Site ${isLoggedIn && 'Site-LoggedIn '} Site--Galaxy-S5`}>
         <NavBar />
 
         <ModalContainer />
@@ -67,43 +107,18 @@ class App extends React.Component {
           <Route path="/" component={AudioPlayerContainer} />
         </aside>
       </div>
-    );
-  }
-}
 
-// const App = (props) => {
-//   const { isLoggedIn } = props;
+      <p className="Site__Author">
+        <span>Designed by: Bao Tran </span>
+        <br />
+        <i className="fab fa-github" />
+        <span>{' '}</span>
+        <i className="fab fa-linkedin" />
+      </p>
+    </div>
 
-//   return (
-//     <div className={`Site ${isLoggedIn && 'Site-LoggedIn '} Site--galaxy-S5`}>
-//       <NavBar />
-
-//       <ModalContainer />
-
-//       <div className="Main">
-//         <Switch>
-//           <ProtectedRoute path="/playlist/:playlistId" component={PlaylistIndexContainer} />
-//           <Route path="/playlist" component={PlaylistIndexContainer} />
-
-//           <Route path="/home" component={SongIndexContainer} />
-//           <Route path="/search" component={SearchIndexContainer} />
-//           <Route path="/about" component={About} />
-
-//           <AuthRoute path="/profile/login" component={LoginFormContainer} />
-//           <AuthRoute path="/profile/signup" component={SignupFormContainer} />
-//           <ProtectedRoute path="/profile" component={UserPlaylistContainer} />
-
-//           <Redirect to="/home" />
-//         </Switch>
-//       </div>
-
-//       <aside className="Aside">
-//         <Route path="/" component={RootPage} />
-//         <Route path="/" component={AudioPlayerContainer} />
-//       </aside>
-//     </div>
-//   );
-// };
+  );
+};
 
 App.propTypes = {
   isLoggedIn: bool.isRequired,
