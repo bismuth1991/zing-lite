@@ -4,7 +4,6 @@
   align-items: flex-end;
   border-bottom: 1px solid white;
   border-left: 1px solid white;
-  height: 768px;
   font-size: 1.15rem;
 }
 .Site__Title {
@@ -19,17 +18,21 @@
   border: 10px solid white;
   border-radius: 15px;
   color: white;
-  margin-bottom: 20px;
-  font-size: 1em
+  margin: calc(2.6em + 40px) 0 20px 0;
+  font-size: 1em;
 }
 .Site__Author {
   flex: none;
   width: 32%;
   display: block;
-  margin: 20px 20px;
+  margin: 20px calc(2.6em + 40px) 20px 20px;
+  // margin: 20px;
   color: white;
   text-align: center;
-  font-size: 1em;
+  font-size: 0.95em;
+  i {
+    font-size: 1.2em;
+  }
 }
 
 @media only screen and (max-device-width: 480px) {
