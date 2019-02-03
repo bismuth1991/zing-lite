@@ -25,7 +25,7 @@ const App = (props) => {
         <span>Zing Lite</span>
       </p>
 
-      <div className={`Site ${isLoggedIn && 'Site-LoggedIn '} Site--Galaxy-S5`}>
+      <div className={`Site ${isLoggedIn && 'Site-LoggedIn'}`}>
         <NavBar />
 
         <ModalContainer />

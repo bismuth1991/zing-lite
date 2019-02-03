@@ -44,7 +44,7 @@ class SearchBar extends React.Component {
         <input
           className="Input-Form__Input"
           type="text"
-          placeholder="Search for songs here..."
+          placeholder="Search for songs..."
           value={query}
           onChange={this.handleChange}
         />
