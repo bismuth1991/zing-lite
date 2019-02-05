@@ -5,7 +5,7 @@
 
 # Main Features:
 
-### Test-driven-development, fully tested standalone back-end in Ruby on Rails, PostgreSQ - [Github](https://github.com/bismuth1991/zing-lite-rails-api)
+### Test-driven-development, fully tested standalone back-end in Ruby on Rails, PostgreSQL - [Github](https://github.com/bismuth1991/zing-lite-rails-api)
 
 ### React/Redux front-end, code base strictly follows AirBNB JavaScript style guide, propTypes checked, highly semantic, maintainable and easy to follow.
 
