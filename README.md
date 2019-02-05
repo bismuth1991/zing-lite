@@ -1,45 +1,72 @@
 # Zing Lite
 
-## A full-stack music application. Features include:
-  + ### Test-driven-development, fully tested standalone back-end in Ruby on Rails, PostgreSQ - [Link to Github repo](https://github.com/bismuth1991/zing-lite-rails-api)
+### A full-stack music application - [Live](https://bismuth1991.github.io/zing-lite/)
 
-  + ### React/Redux front-end, code base strictly follows AirBNB JavaScript style guide, propTypes checked, highly semantic, maintainable and easy to follow.
 
-  + ### Custom-made audio player with playlist functionality, leveraging HTML5 audio API.
+# Main Features:
+
+### Test-driven-development, fully tested standalone back-end in Ruby on Rails, PostgreSQ - [Github](https://github.com/bismuth1991/zing-lite-rails-api)
+
+### React/Redux front-end, code base strictly follows AirBNB JavaScript style guide, propTypes checked, highly semantic, maintainable and easy to follow.
+
   ```javascript
-  class AudioPlayer extends React.Component {
-    // ...
+  // example of propTypes check in SongIndex component
+  import { func, arrayOf, shape, number, string, bool } from 'prop-types';
 
-    render() {
-      return (
-        <>
-          <Audio
-            audioRef={this.audioRef}
-            url={url}
-            forward={forward}
-            shuffle={shuffle}
-            isPlaying={isPlaying}
-            isEndOfLoop={isEndOfLoop}
-            isOnLoop={isOnLoop}
-            isOnShuffle={isOnShuffle}
-            getTotalAudioTime={this.getTotalAudioTime}
-            updateCurrentAudioTime={this.updateCurrentAudioTime}
-            updateVolume={this.updateVolume}
-            handlePause={this.handlePause}
-            handlePlay={this.handlePlay}
-            playAudio={this.playAudio}
-          />
-          // ...
-        </>
-      )
-    }
-  }
+  // ...
+  SongIndex.propTypes = {
+    fetchSomeSongs: func.isRequired,
+    userClickPlay: func.isRequired,
+    forward: func.isRequired,
+    loading: bool.isRequired,
+    songs: arrayOf(shape({
+      id: number,
+      title: string,
+      url: string,
+      artist: string,
+      artistAvatar: string,
+      album: string,
+      coverImage: string,
+    })).isRequired,
+  };
   ```
 
-  + ### Responsive, mobile-first design, utilizing latest CSS3 grid system and flexbox.
+### Custom-made audio player with playlist functionality, leveraging HTML5 audio API.
+
+```javascript
+class AudioPlayer extends React.Component {
+  // ...
+
+  render() {
+    return (
+      <>
+        <Audio
+          audioRef={this.audioRef}
+          url={url}
+          forward={forward}
+          shuffle={shuffle}
+          isPlaying={isPlaying}
+          isEndOfLoop={isEndOfLoop}
+          isOnLoop={isOnLoop}
+          isOnShuffle={isOnShuffle}
+          getTotalAudioTime={this.getTotalAudioTime}
+          updateCurrentAudioTime={this.updateCurrentAudioTime}
+          updateVolume={this.updateVolume}
+          handlePause={this.handlePause}
+          handlePlay={this.handlePlay}
+          playAudio={this.playAudio}
+        />
+        // ...
+      </>
+    )
+  }
+}
+```
+
+### Responsive, mobile-first design, utilizing latest CSS3 grid system and flexbox.
 
 
-## Other noteworthy features:
+# Other noteworthy features:
 ### Proper Timeout management to avoid memory leak
 ```javascript
 class Modal extends React.Component {
