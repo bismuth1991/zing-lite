@@ -1,68 +1,103 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Zing Lite
 
-## Available Scripts
+## A full-stack music application. Features include:
+  + ### Test-driven-development, fully tested standalone back-end in Ruby on Rails, PostgreSQ - [Link to Github repo](https://github.com/bismuth1991/zing-lite-rails-api)
 
-In the project directory, you can run:
+  + ### React/Redux front-end, code base strictly follows AirBNB JavaScript style guide, propTypes checked, highly semantic, maintainable and easy to follow.
 
-### `npm start`
+  + ### Custom-made audio player with playlist functionality, leveraging HTML5 audio API.
+  ```javascript
+  class AudioPlayer extends React.Component {
+    // ...
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    render() {
+      return (
+        <>
+          <Audio
+            audioRef={this.audioRef}
+            url={url}
+            forward={forward}
+            shuffle={shuffle}
+            isPlaying={isPlaying}
+            isEndOfLoop={isEndOfLoop}
+            isOnLoop={isOnLoop}
+            isOnShuffle={isOnShuffle}
+            getTotalAudioTime={this.getTotalAudioTime}
+            updateCurrentAudioTime={this.updateCurrentAudioTime}
+            updateVolume={this.updateVolume}
+            handlePause={this.handlePause}
+            handlePlay={this.handlePlay}
+            playAudio={this.playAudio}
+          />
+          // ...
+        </>
+      )
+    }
+  }
+  ```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+  + ### Responsive, mobile-first design, utilizing latest CSS3 grid system and flexbox.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Other noteworthy features:
+### Proper Timeout management to avoid memory leak
+```javascript
+class Modal extends React.Component {
+  // ...
+  componentDidUpdate() {
+    const { modal, closeModal } = this.props;
 
-### `npm run build`
+    if (this.closeModalTimeout) {
+      clearTimeout(this.closeModalTimeout);
+    }
+    if (modal.type !== 'hidden') {
+      this.closeModalTimeout = setTimeout(() => closeModal(), 2000);
+    }
+  }
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  componentWillUnmount() {
+    if (this.closeModalTimeout) clearTimeout(this.closeModalTimeout);
+  }
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+  handleClick() {
+    const { closeModal } = this.props;
+    if (this.closeModalTimeout) clearTimeout(this.closeModalTimeout);
+    closeModal();
+  }
+  // ...
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Integrate debounce with live search to prevent repeated queries to database
+```javascript
+class SearchBar extends React.Component {
+  constructor(props) {
+    // ...
+    this.debounceSearch = debounce(query => props.fetchQueryData(query), 500);
+  }
 
-### `npm run eject`
+  handleSubmit(e) {
+    e.preventDefault();
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    this.debounceSearch.flush();
+    this.setState({ query: '' });
+  }
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  handleChange(e) {
+    this.setState({
+      query: e.target.value,
+    });
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    const { clearSearchResults } = this.props;
+    const query = e.target.value;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    if (query && query !== '') {
+      this.debounceSearch(query);
+    } else {
+      this.debounceSearch.clear();
+      clearSearchResults();
+    }
+  }
+  //...
+}
+```
