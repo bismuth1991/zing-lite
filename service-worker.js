@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/zing-lite/precache-manifest.29505493e9332bbf77eef44a8ec28632.js"
+  "/zing-lite/precache-manifest.598c558ddeace421f62c5635a14713ad.js"
 );
 
 workbox.clientsClaim();
