@@ -56,12 +56,11 @@ const App = (props) => {
       <p className="Site__Author">
         <span>Designed by: Bao Tran </span>
         <br />
-        <i className="fab fa-github" />
+        <a href="https://github.com/bismuth1991"><i className="fab fa-github" /></a>
         <span>{' '}</span>
-        <i className="fab fa-linkedin" />
+        <a href="https://www.linkedin.com/in/baotran-91/"><i className="fab fa-linkedin" /></a>
       </p>
     </div>
-
   );
 };
 
